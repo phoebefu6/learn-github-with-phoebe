@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 3 · Issues + Projects - learn github with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-github-with-phoebe</a> / Session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn GitHub with Phoebe · Session 3 of 6 · Non-tech track</div>
+    <h1>Issues + Projects: <span class="accent">the todo list that runs the world</span></h1>
+    <p class="sub">The task tool hiding inside every repository. Issues track work of any kind - not just bugs - with permanent numbers, owners and conversations. Projects stacks a kanban board on top. By the end of the hour your handbook has a real task list and a board you can run a week from.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Core</span>
+      <span class="chip audience">Non-tech professionals</span>
+      <span class="chip audience">Browser only</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Apply-along</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where did the work go?</h2>
+    </div>
+    <p class="lede">Session 2 gave your handbook pages. Today it gets a nervous system. Most teams scatter their asks across email, chat and memory - then wonder why things fall through. GitHub's answer is disarmingly simple: every piece of work becomes an issue with a permanent number, living at the same address as the documents it is about. Labels sort them, one owner carries each, and a Projects board turns the pile into a week you can actually see.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Apply-along - in your browser, everyone does it</span>
+      <span class="pill inkpill">Running artifact: your own handbook repo</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      Four real issues on your handbook repo with verb-first titles, your own three-label taxonomy, a "Launch week" milestone, and a live kanban board with a card mid-drag - plus the reframe that changes team habits: open an issue instead of sending a task email.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: ISSUES ============ -->
+  <section class="section" id="issues">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the universal todo</span>
+      <h2>Issues: the universal todo <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">An issue is one unit of work or discussion with a permanent number. Despite the gloomy name, issues are NOT just bugs - teams use them for tasks, ideas, questions and decisions. Number #12 stays #12 forever: linkable, searchable, quotable in any conversation on the repo.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of a great issue: verb-first title, context and done-looks-like body, label chips, task-list progress, single assignee and milestone, each zone annotated">
+        <style>
+          .izT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .izS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .9; }
+          .izK { font: 700 13px Inter, sans-serif; fill: #1F2328; }
+          .izN { font: 400 12px Inter, sans-serif; fill: #656D76; }
+          .izG { font: 700 12px Inter, sans-serif; fill: #1F883D; }
+          .izA { font: 700 12px Inter, sans-serif; fill: #FFFFFF; }
+          .izL { stroke: #AFB8C1; stroke-width: 2; fill: none; }
+        </style>
+        <rect x="60" y="26" width="540" height="280" rx="14" fill="#F6F8FA"/>
+        <rect x="80" y="44" width="500" height="42" rx="10" fill="#1B1F23"/>
+        <text class="izT" x="96" y="70">Refresh the Q3 dashboard data <tspan opacity=".7">#12</tspan></text>
+        <rect x="80" y="98" width="76" height="24" rx="12" fill="#DAFBE1"/>
+        <text class="izK" x="94" y="115">content</text>
+        <rect x="164" y="98" width="60" height="24" rx="12" fill="#DAFBE1"/>
+        <text class="izK" x="180" y="115">data</text>
+        <text class="izN" x="80" y="150">Context: the dashboard numbers stop at May.</text>
+        <text class="izN" x="80" y="172">Done looks like: June is visible and Sam is pinged.</text>
+        <text class="izK" x="80" y="206">- [x] pull the June export &#160;&#160; - [ ] update the page</text>
+        <rect x="80" y="220" width="220" height="8" rx="4" fill="#AFB8C1"/>
+        <rect x="80" y="220" width="110" height="8" rx="4" fill="#2DA44E"/>
+        <text class="izG" x="312" y="229">1 of 2 tasks</text>
+        <circle cx="94" cy="266" r="13" fill="#2DA44E"/>
+        <text class="izA" x="89" y="271">S</text>
+        <text class="izK" x="116" y="271">Assignee: Sam</text>
+        <text class="izK" x="300" y="271">Milestone: Launch week</text>
+        <rect x="640" y="40" width="210" height="40" rx="10" fill="#1B1F23"/>
+        <text class="izA" x="654" y="64">Verb-first title + number</text>
+        <rect x="640" y="96" width="210" height="40" rx="10" fill="#1B1F23"/>
+        <text class="izA" x="654" y="120">Labels = your categories</text>
+        <rect x="640" y="152" width="210" height="40" rx="10" fill="#1B1F23"/>
+        <text class="izA" x="654" y="176">Context + done-looks-like</text>
+        <rect x="640" y="208" width="210" height="40" rx="10" fill="#1B1F23"/>
+        <text class="izA" x="654" y="232">Task list = progress bar</text>
+        <rect x="640" y="264" width="210" height="40" rx="10" fill="#1B1F23"/>
+        <text class="izA" x="654" y="288">One owner, one date bucket</text>
+        <line class="izL" x1="580" y1="65" x2="636" y2="60"/>
+        <line class="izL" x1="580" y1="110" x2="636" y2="116"/>
+        <line class="izL" x1="580" y1="160" x2="636" y2="172"/>
+        <line class="izL" x1="580" y1="224" x2="636" y2="228"/>
+        <line class="izL" x1="580" y1="268" x2="636" y2="284"/>
+      </svg>
+      <figcaption>🔍 Click to zoom - the anatomy of an issue that actually gets done</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What makes an issue great (and gettable-done)<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Verb-first title:</strong> "Refresh the Q3 dashboard data" tells you the what in one glance. "Dashboard" tells you nothing; "URGENT!!!" tells you less.</li>
+          <li><strong>Context + definition of done:</strong> two lines. What is the situation, and what does finished look like? Vague issues create vague work.</li>
+          <li><strong>One owner:</strong> the assignee. Work assigned to everyone is owned by no one.</li>
+          <li><strong>The conversation stays attached:</strong> comments thread under the issue, <code>@mentions</code> notify people, and typing <code>#numbers</code> links issues to each other. Six months later, the whole decision trail is still there, at the same address.</li>
+          <li><strong>Task lists inside issues:</strong> <code>- [ ]</code> checkboxes from Session 2 render as a live progress bar on the issue list. Sub-tasks without another tool.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The reframe that changes teams</strong>
+          Next time you are about to send a task email, open an issue instead. The ask, the discussion and the outcome stay next to the work - findable forever, instead of buried in someone's inbox.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Issue etiquette + templates<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Two habits that make issue conversations pleasant, and one upgrade for later:</p>
+        <ul>
+          <li><strong>@mention with intent:</strong> <code>@sam</code> sends Sam a notification, so mention the person you need, not everyone you know. One name per ask.</li>
+          <li><strong>Link, do not repeat:</strong> typing <code>#12</code> auto-links to issue 12, and the link shows up on BOTH issues. Related work finds itself; nobody re-explains context.</li>
+          <li><strong>Issue templates (later):</strong> once your team files issues weekly, a template can pre-fill the structure - context, done-looks-like, checklist - so every new issue arrives half-ready. Settings → set up templates when you feel the need; do not build process before the habit exists.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: LABELS ============ -->
+  <section class="section" id="labels">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · sorting the pile</span>
+      <h2>Labels, assignees, milestones <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">A pile of issues becomes a system with three small tools. <strong>Labels</strong> are color-coded categories you invent yourself. An <strong>assignee</strong> is the single accountable owner. A <strong>milestone</strong> is a dated bucket of issues - "the Q3 refresh", "Launch week". Filters then make any slice of the pile one click away.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Your taxonomy, your rules (but keep it small)<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Labels:</strong> make your own - <em>content</em>, <em>design</em>, <em>review</em>, <em>urgent</em>, <em>idea</em>. Color-coded, filterable, and entirely yours. Keep the set under ~10: a taxonomy nobody remembers is a taxonomy nobody applies.</li>
+          <li><strong>Assignee:</strong> exactly one accountable person per issue. Others can comment, help, review - but one name carries it over the line.</li>
+          <li><strong>Milestone:</strong> a bucket with a due date. "Launch week" collects every issue that must land by Friday, and shows a progress bar as they close.</li>
+          <li><strong>Filters:</strong> the issue list filters by any combination - label:content, assignee:sam, milestone:"Launch week". Any slice of the work, one click.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Triage at open-source scale:</strong> maintainers of popular repos handle hundreds of incoming issues a week with little more than labels. One label became a global convention: <em>good-first-issue</em>, marking tasks friendly to newcomers - so effective that GitHub built discovery pages around it, and "find a good-first-issue" is now how thousands of people worldwide make their first contribution. A color-coded sticker created an onboarding system.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the board on top</span>
+      <h2>Projects: the kanban on top <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">GitHub Projects gives you board and table views built FROM your issues. Columns are status - Todo, In progress, Done - and you drag cards between them. The crucial idea: a card on the board IS the issue. It never leaves its repo; the board is just a view of it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Projects board with Todo, In progress and Done columns, issue cards flowing left to right, and one card tethered back to its home repo">
+        <style>
+          .bdH { font: 700 14px Inter, sans-serif; fill: #1F2328; }
+          .bdT { font: 700 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .bdK { font: 700 12.5px Inter, sans-serif; fill: #1F2328; }
+          .bdN { font: 400 12px Inter, sans-serif; fill: #656D76; }
+          .bdW { stroke: #AFB8C1; stroke-width: 2; stroke-dasharray: 6 5; fill: none; marker-end: url(#bdArw); }
+          .bdF { stroke: #2DA44E; stroke-width: 2.5; fill: none; }
+        </style>
+        <defs>
+          <marker id="bdArw" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="#AFB8C1"/>
+          </marker>
+        </defs>
+        <line class="bdW" x1="330" y1="34" x2="420" y2="34"/>
+        <text class="bdN" x="428" y="38">drag to move · drag = status change</text>
+        <rect x="60" y="50" width="240" height="180" rx="12" fill="#F6F8FA"/>
+        <text class="bdH" x="80" y="78">Todo</text>
+        <rect x="80" y="94" width="200" height="42" rx="8" fill="#2DA44E"/>
+        <text class="bdT" x="94" y="112">#14 Write onboarding page</text>
+        <rect x="80" y="146" width="200" height="42" rx="8" fill="#2DA44E"/>
+        <text class="bdT" x="94" y="164">#15 Review handbook tone</text>
+        <rect x="340" y="50" width="240" height="180" rx="12" fill="#F6F8FA"/>
+        <text class="bdH" x="360" y="78">In progress</text>
+        <rect x="360" y="94" width="200" height="42" rx="8" fill="#1B1F23"/>
+        <text class="bdT" x="374" y="112">#12 Refresh Q3 data</text>
+        <text class="bdT" x="374" y="128" opacity=".7">Priority: High · Sam</text>
+        <rect x="620" y="50" width="240" height="180" rx="12" fill="#F6F8FA"/>
+        <text class="bdH" x="640" y="78">Done ✓</text>
+        <rect x="640" y="94" width="200" height="42" rx="8" fill="#DAFBE1"/>
+        <text class="bdK" x="654" y="112">#11 Front door README</text>
+        <path class="bdF" d="M 460 136 C 460 200, 440 230, 420 252"/>
+        <rect x="130" y="248" width="300" height="42" rx="10" fill="#1B1F23"/>
+        <text class="bdT" x="146" y="266">team-handbook · Issues · #12</text>
+        <text class="bdT" x="146" y="282" opacity=".7">the card IS the issue - same number, same home</text>
+        <text class="bdN" x="470" y="276">Close the issue, the card moves itself.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - cards flow left to right, but every card stays tethered to its repo</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why this beats a separate tool<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Columns = status:</strong> Todo, In progress, Done to start. Drag a card, the status changes; close the issue, the card moves to Done by itself.</li>
+          <li><strong>Custom fields:</strong> add Priority, Date, or anything else, and every card gets the field. Table view turns the same data into a spreadsheet.</li>
+          <li><strong>An issue can live on a board without leaving its repo.</strong> One board can even gather issues from several repos.</li>
+          <li><strong>The killer feature is the address:</strong> the task and the work live at the same URL. No copy-pasting between the task tool and the document tool, no "which one is true?" - the board is a view, the issue is the truth.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Table view and the Monday standup slice<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every Projects board has a <strong>Table</strong> view of the same cards - a spreadsheet with sortable columns for status, assignee, priority and your custom fields.</p>
+        <ul>
+          <li><strong>Weekly standup trick:</strong> group or slice the table by <strong>assignee</strong> - each person's week appears as their own block. Walk the blocks, meeting done.</li>
+          <li><strong>Slice by milestone</strong> before a deadline to see exactly what stands between you and "Launch week: done".</li>
+        </ul>
+        <p>Note: Projects has no dedicated GitHub Skills course - the official reference is docs.github.com (search "GitHub Projects"). Everything above is in there, plus automation recipes for later.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 1 of 3</span>
+      <h2>Give the handbook a task list <span class="tag demo">★ 8 min · everyone files</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Open your <strong>team-handbook</strong> repo → <strong>Issues</strong> tab → green <strong>New issue</strong>. Create 4 real issues: two content pages to write ("Write the onboarding page", "Draft the how-we-meet page"), one review task ("Review the front door for tone"), and one idea ("Idea: add a who-does-what directory"). Verb-first titles, one line of context, one line of done-looks-like.</p></div>
+      <div class="step"><p>Create 3 labels (Issues → Labels → New label): <strong>content</strong>, <strong>review</strong>, <strong>idea</strong>. Pick colors you will recognize at a glance, then apply one to each issue.</p></div>
+      <div class="step"><p>Assign yourself to every issue - one accountable owner, even in a team of one.</p></div>
+      <div class="step"><p>Create a milestone called <strong>Launch week</strong> (Issues → Milestones → New milestone, due date next Friday) and put your 2 content issues in it. Watch the milestone progress bar appear.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 2 of 3</span>
+      <h2>Triage like a maintainer <span class="tag demo">★ 8 min · everyone sorts</span></h2>
+    </div>
+    <p class="lede">Six issues just landed in your repo. You are the maintainer - decide what each one needs first. This is the judgment that keeps real issue lists healthy.</p>
+    <div class="widget" data-widget="sorter" data-config='{
+  "title": "★ Triage this issue",
+  "intro": "You are the maintainer. What does each incoming issue need first?",
+  "categories": ["Write a better title", "Add label + assignee", "Close it", "Good to go"],
+  "items": [
+    {"t": "URGENT!!! everything is broken!!!", "c": 0, "why": "no verb, no what - retitle before anything else can happen"},
+    {"t": "Refresh the Q3 dashboard data - clear enough, but no label and nobody owns it.", "c": 1, "why": "unowned work is unfinished work: label it, assign one accountable person"},
+    {"t": "A duplicate of the pricing question answered and closed last month.", "c": 2, "why": "close with a friendly link to the original - duplicates split the conversation"},
+    {"t": "Update the onboarding page intro - labeled content, assigned to Sam, in the Launch milestone.", "c": 3, "why": "title, owner, label, milestone: this is what ready looks like"},
+    {"t": "Improve onboarding (no what, no why, no done-looks-like).", "c": 0, "why": "vague titles create vague work - ask for the specific change"},
+    {"t": "A question fully answered by the README&apos;s second paragraph.", "c": 2, "why": "close kindly with the link - and maybe note the README could be more visible"}
+  ]}'></div>
+    <div class="callout tip">
+      <strong>The debrief</strong>
+      Triage is three questions in order: is the title a clear verb-first ask? Does one person own it, with a label? Should it even be open? Answer those and a hundred-issue list stays calm.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 3 of 3</span>
+      <h2>Build the board <span class="tag demo">★ 6 min · everyone drags</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>From your repo: <strong>Projects</strong> tab → <strong>New project</strong> → choose <strong>Board</strong>. Name it "Handbook launch". Three columns appear: Todo, In progress, Done.</p></div>
+      <div class="step"><p>Add your 4 issues: click <strong>+ Add item</strong> at the bottom of Todo, type <code>#</code> and pick each issue from the list. Four cards, each still living in the repo.</p></div>
+      <div class="step"><p>Drag one card to <strong>In progress</strong> - the one you will actually start this week. Feel free to enjoy the drag; everyone does.</p></div>
+      <div class="step"><p>Add a custom field: <strong>+ New field → Priority</strong> (single select: High / Medium / Low), and set it on your cards. Screenshot-worthy in 5 minutes - a real board over real work.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min across the week</span></h2>
+    </div>
+    <ul>
+      <li><strong>Run one real week through the board:</strong> each morning, glance at it; drag what you start, close what you finish. Friday, look at Done and enjoy it.</li>
+      <li><strong>Open issues instead of sending 3 task-emails.</strong> Next three times you would email someone an ask about shared work, file an issue and @mention them instead.</li>
+      <li><strong>Note what changed.</strong> One honest sentence at the end of the week: what was different about asks living next to the work? Bring it to Session 4.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Which issue is "ready" - safe to leave on the pile knowing it will get done right?</p>
+      <button class="qopt" type="button">A · A really detailed title, ten lines long, so nothing is ambiguous</button>
+      <button class="qopt" type="button">B · Verb-first title, a label, ONE assignee - and a milestone if it has a date</button>
+      <button class="qopt" type="button">C · Assigned to the whole team, so everyone feels responsible</button>
+      <p class="qwhy">Ready = clear ask + category + single accountable owner. Work assigned to everyone is owned by no one - that was the triage widget's whole lesson.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Labels vs milestones - what is the actual difference?</p>
+      <button class="qopt" type="button">A · Labels are color-coded categories you slice by; a milestone is a dated bucket of issues with a progress bar</button>
+      <button class="qopt" type="button">B · They are the same thing with two names</button>
+      <button class="qopt" type="button">C · Labels are for engineers, milestones are for managers</button>
+      <p class="qwhy">Labels answer "what kind?" (content, review, idea - your taxonomy, under ~10). Milestones answer "by when?" (Launch week, the Q3 refresh). One issue can have both.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · You drag a card across your Projects board. Where does that issue actually live?</p>
+      <button class="qopt" type="button">A · Inside the Projects app - it moved out of the repo when you added it</button>
+      <button class="qopt" type="button">B · In both places - you have to keep the two copies in sync</button>
+      <button class="qopt" type="button">C · In the repo, same #number as always - the board is just a view of it</button>
+      <p class="qwhy">The card IS the issue. It never leaves its repo; the board is a lens. That is why closing the issue moves the card, and why there is never a "which one is true?" problem.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official GitHub Skills coverage</h2>
+    </div>
+    <p class="lede">This course maps to GitHub's own free Skills exercises - each session tells you honestly what is covered here and what the official course adds.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Introduction to repository management (skills/introduction-to-repository-management)</span><span class="note">labels and community basics covered here; the full community-health file set returns in Session 6</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub Projects (docs.github.com - no dedicated Skills course exists)</span><span class="note">board + custom fields at working level - Part 3 + Apply-along 3; table view and slicing in self-study</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Issue templates</span><span class="note">mentioned only - once your team files issues weekly, templates pre-fill the context and done-looks-like sections for them</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Issue</b><span>One unit of work or discussion with a permanent #number. Tasks, ideas, questions, decisions - not just bugs.</span></div>
+      <div class="cheat-item"><b>Ready issue</b><span>Verb-first title · context · done-looks-like · a label · ONE assignee. Vague titles create vague work.</span></div>
+      <div class="cheat-item"><b>Labels vs milestones</b><span>Labels = your categories (keep under ~10). Milestone = dated bucket with a progress bar (Launch week).</span></div>
+      <div class="cheat-item"><b>Task lists</b><span>- [ ] inside an issue renders checkboxes AND a progress bar on the issue list. Sub-tasks for free.</span></div>
+      <div class="cheat-item"><b>Board recipe</b><span>Projects → New project → Board · columns = status · drag to move · + New field for Priority or Date.</span></div>
+      <div class="cheat-item"><b>The reframe</b><span>Open an issue instead of a task email. The ask lives next to the work, findable forever.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 3 of 6 · learn-github-with-phoebe · by Phoebe Fu</span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="02-first-repo-markdown.html">← Your first repo + Markdown</a> &nbsp;·&nbsp; <a href="04-branches-and-prs.html">Branches + PRs without code →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/widgets.js?v=1"></script>
+</body>
+</html>

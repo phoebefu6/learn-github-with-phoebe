@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 4 · Branches + PRs without code - learn github with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-github-with-phoebe</a> / Session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn GitHub with Phoebe · Session 4 of 6 · Non-tech track</div>
+    <h1>Branches + pull requests: <span class="accent">the flow that kills final_v3_FINAL.docx</span></h1>
+    <p class="sub">This is the heart of the course. Today you learn the collaboration move GitHub exports to the whole working world: draft in a safe copy, propose the change, discuss it line by line, accept it with one click - and keep the full story forever. Browser only, as always. By the end of the hour you will have done both sides of the flow: author and reviewer.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Core</span>
+      <span class="chip audience">Non-tech professionals</span>
+      <span class="chip audience">Browser only</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Apply-along</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Why this session is the whole point</h2>
+    </div>
+    <p class="lede">Every team has lived the horror story: final.docx, final_v2.docx, final_v3_FINAL.docx, and nobody knows which one the boss approved. Sessions 1-3 gave you a repo, a README and a task board. Today those become a real collaboration system: branches (safe copies), pull requests (proposals with a conversation), and reviews (comment, suggest, approve). One flow replaces the email attachment forever - and it works on your handbook exactly as it works on the world's biggest software.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Apply-along - in your browser, everyone does it</span>
+      <span class="pill inkpill">Running artifact: your own handbook repo</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      The full branch → pull request → review → merge loop, done with your own hands on your own handbook - plus the reviewer superpowers (line comments and one-click suggestions) and the purple Merged badge to prove it. This is the single most valuable pattern GitHub will ever teach you.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: BRANCHES ============ -->
+  <section class="section" id="branches">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · safe copies</span>
+      <h2>Branches: safe copies <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">A branch is a parallel copy of the whole repo where you can work freely without touching the real thing. The real thing has a name: <strong>main</strong> - the published truth everyone reads. Your branch is your draft desk; nothing you do there changes main until the team accepts it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Railway diagram: the main line runs straight; a branch curves off, collects two commits, and curves back in at a purple merge point">
+        <style>
+          .rwT { font: 700 13.5px Inter, sans-serif; fill: #1F2328; }
+          .rwW { font: 700 12px Inter, sans-serif; fill: #FFFFFF; }
+          .rwX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .rwG { font: 700 13px Inter, sans-serif; fill: #2DA44E; }
+          .rwP { font: 700 13px Inter, sans-serif; fill: #8250DF; }
+        </style>
+        <line x1="60" y1="160" x2="820" y2="160" stroke="#1B1F23" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 230 160 C 290 160 290 80 350 80 L 520 80 C 585 80 585 160 640 160" stroke="#2DA44E" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="130" cy="160" r="8" fill="#1B1F23"/>
+        <circle cx="230" cy="160" r="8" fill="#1B1F23"/>
+        <circle cx="760" cy="160" r="8" fill="#1B1F23"/>
+        <circle cx="390" cy="80" r="8" fill="#2DA44E"/>
+        <circle cx="480" cy="80" r="8" fill="#2DA44E"/>
+        <circle cx="640" cy="160" r="10" fill="#8250DF"/>
+        <rect x="602" y="184" width="78" height="24" rx="12" fill="#8250DF"/>
+        <text class="rwW" x="617" y="200">Merged</text>
+        <text class="rwT" x="60" y="138">main = the published truth</text>
+        <text class="rwG" x="335" y="50">your branch = your draft</text>
+        <text class="rwX" x="335" y="118">clarify-expense-policy · each dot = a commit</text>
+        <text class="rwP" x="695" y="200">merge = draft accepted</text>
+        <text class="rwX" x="700" y="138">main updated, history kept</text>
+        <text class="rwX" x="60" y="234">Main never wobbles while you draft. Readers keep seeing the published truth until the moment the merge lands.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the classic railway diagram, in office terms</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>You never have to create a branch on purpose<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Here is the friendly secret: the web editor offers the branch to you. Open a file, click the pencil ✏️, make your edit, press Commit changes - and if you should not be writing to main directly, GitHub shows a radio button: <strong>"Create a new branch for this commit and start a pull request."</strong> Pick it, and the safe copy plus the proposal appear together. No ceremony.</p>
+        <ul>
+          <li><strong>Name the branch after the change:</strong> clarify-expense-policy, fix-onboarding-typo, add-travel-section. Future readers (including future you) thank present you.</li>
+          <li><strong>One branch, one topic.</strong> A branch that changes ten unrelated things is as unreviewable as an email titled "misc updates".</li>
+          <li><strong>Branches are cheap and disposable.</strong> Make one for a two-word edit. After the merge it gets deleted and nothing of value is lost - the history moved into main.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The office translation</strong>
+          A branch is "let me take a copy home and mark it up" - except the copy can never drift out of date silently, and handing it back is a one-click, fully tracked event instead of an attachment.
+        </div>
+      </div>
+    </details>
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Where branches live, and how they end<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Seeing them:</strong> the branch dropdown at the top-left of the Code tab (it usually says "main") lists every branch in the repo. Click one to browse the repo as that draft sees it - a whole parallel world, one click away.</li>
+          <li><strong>Branches end one of two ways:</strong> merged (the purple badge - the draft became truth) or deleted unmerged (the proposal was declined, main untouched). Both endings are safe; neither loses history that reached main.</li>
+          <li><strong>Stale branches</strong> - drafts someone opened and forgot - are the repo's junk drawer. Deleting a merged branch is always safe; ask before deleting an unmerged one, exactly as you would before binning a colleague's marked-up printout.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: PULL REQUESTS ============ -->
+  <section class="section" id="pull-requests">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · proposals with a conversation</span>
+      <h2>Pull requests: proposals with a conversation <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">A pull request (PR) says: <strong>"here is my branch - compare it to main, discuss, then accept."</strong> It is a proposal, a track-changes view, and a meeting thread fused into one page. Nothing changes on main while the PR is open; declining it harms nothing.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of a pull request page: title, diff with a red removed line and a green added line, conversation thread, reviewers box, green merge button and purple merged badge, with five numbered labels">
+        <style>
+          .paT { font: 700 15px Inter, sans-serif; fill: #1F2328; }
+          .paB { font: 700 12px Inter, sans-serif; fill: #FFFFFF; }
+          .paM { font: 600 12px "SF Mono", Menlo, monospace; fill: #FFFFFF; }
+          .paC { font: 400 12px Inter, sans-serif; fill: #1F2328; }
+          .paX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .paN { font: 700 12px Inter, sans-serif; fill: #FFFFFF; }
+          .paK { font: 700 13px Inter, sans-serif; fill: #1F2328; }
+        </style>
+        <rect x="50" y="28" width="550" height="330" rx="14" fill="#F6F8FA" stroke="#AFB8C1"/>
+        <text class="paT" x="75" y="62">Clarify expense policy  #12</text>
+        <rect x="330" y="44" width="58" height="24" rx="12" fill="#2DA44E"/>
+        <text class="paB" x="345" y="60">Open</text>
+        <circle cx="580" cy="55" r="11" fill="#8250DF"/><text class="paN" x="576" y="60">1</text>
+        <text class="paX" x="75" y="92">Files changed - the diff</text>
+        <rect x="75" y="100" width="470" height="26" rx="4" fill="#B42318"/>
+        <text class="paM" x="88" y="117">- reimburse within 60 days</text>
+        <rect x="75" y="130" width="470" height="26" rx="4" fill="#2DA44E"/>
+        <text class="paM" x="88" y="147">+ repay within 30 days</text>
+        <circle cx="580" cy="128" r="11" fill="#8250DF"/><text class="paN" x="576" y="133">2</text>
+        <text class="paX" x="75" y="184">Conversation</text>
+        <rect x="75" y="192" width="400" height="26" rx="8" fill="#FFFFFF" stroke="#AFB8C1"/>
+        <text class="paC" x="88" y="209">Maria: tiny suggestion on line 12</text>
+        <rect x="75" y="224" width="400" height="26" rx="8" fill="#FFFFFF" stroke="#AFB8C1"/>
+        <text class="paC" x="88" y="241">You: good catch - committed!</text>
+        <circle cx="580" cy="215" r="11" fill="#8250DF"/><text class="paN" x="576" y="220">3</text>
+        <rect x="75" y="278" width="215" height="52" rx="8" fill="#1B1F23"/>
+        <text class="paB" x="90" y="299">Reviewers</text>
+        <text class="paM" x="90" y="318">Maria  ✓ approved</text>
+        <rect x="310" y="288" width="168" height="32" rx="8" fill="#2DA44E"/>
+        <text class="paB" x="325" y="309">Merge pull request</text>
+        <rect x="492" y="288" width="70" height="32" rx="8" fill="#8250DF"/>
+        <text class="paB" x="504" y="309">Merged</text>
+        <circle cx="580" cy="304" r="11" fill="#8250DF"/><text class="paN" x="576" y="309">5</text>
+        <circle cx="182" cy="260" r="11" fill="#8250DF"/><text class="paN" x="178" y="265">4</text>
+        <text class="paK" x="630" y="62">1 · Title says the intent</text>
+        <text class="paK" x="630" y="120">2 · The diff:</text>
+        <text class="paX" x="630" y="138">red = removed, green = added</text>
+        <text class="paK" x="630" y="208">3 · Conversation stays</text>
+        <text class="paX" x="630" y="226">attached forever</text>
+        <text class="paK" x="630" y="278">4 · Reviewers approve</text>
+        <text class="paK" x="630" y="316">5 · Merge, then the</text>
+        <text class="paX" x="630" y="334">purple badge for keeps</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the five zones of every pull request page</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The diff is the world's best track-changes<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Red lines = removed, green lines = added.</strong> A changed sentence shows as one red line (the old) plus one green line (the new). Reviewers see exactly what would change - never a wall of maybe-different text.</li>
+          <li><strong>The Conversation tab</strong> collects every comment, decision and "why we did this" - attached to the change forever. Six months later, the reasoning is one click away instead of buried in someone's inbox.</li>
+          <li><strong>Draft PRs</strong> say "not ready yet - look, but do not review formally". Perfect for work in progress you want visible early.</li>
+          <li><strong>Closing without merging = proposal declined.</strong> Main never changed, the branch can be deleted, and the discussion stays on record. Saying no is safe, cheap and polite here.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>GitLab's public handbook</strong> is the famous proof: thousands of employees, and every policy change - salary formulas, parental leave, meeting norms - lands as a pull request reviewed in the open. HR people and lawyers open PRs daily; almost none of them code. And closer to home: the pages of this very course ship via pull requests, one session per proposal.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: REVIEWS ============ -->
+  <section class="section" id="reviews">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · comment, suggest, approve</span>
+      <h2>Reviews: comment, suggest, approve <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">A reviewer opens Files changed, reads the red and green, and has four moves: comment on any line, <strong>suggest an exact replacement</strong>, request changes, or approve. The suggestion is the showstopper - the author accepts the reviewer's exact fix with one click.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The four reviewer moves, and who presses merge<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Comment:</strong> attach a note to one specific line. No more "in the third paragraph on page 2, I think...". The line itself carries the discussion.</li>
+          <li><strong>Suggest:</strong> the ± icon in the comment box lets you type the exact replacement text. The author sees your version rendered as its own mini diff and clicks <strong>Commit suggestion</strong> - your fix lands, attributed to both of you, no retyping. This one button converts vague feedback into finished work.</li>
+          <li><strong>Request changes:</strong> the formal "not yet" - the PR shows a visible block until concerns are resolved.</li>
+          <li><strong>Approve:</strong> the formal thumbs-up. Convention: <strong>the author merges</strong> after approval - reviewers advise, the proposer ships.</li>
+        </ul>
+        <p>Then the merge: one green button, the badge flips to purple <strong>Merged</strong>, the branch gets deleted, main is updated, and every commit and comment is preserved in the history. The draft became the published truth, with a paper trail.</p>
+        <div class="callout tip">
+          <strong>The habit that transfers</strong>
+          Line-level suggestions are the skill colleagues will notice first. "Here is the exact sentence I would use instead" beats "this section feels off" in every medium - GitHub just made it a button.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Merge conflicts + branch protection, in one screen<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Merge conflicts, one paragraph:</strong> if two people edit the same line of the same file on different branches, GitHub cannot guess which version wins - so it shows both, marked clearly, and asks a human to pick. The web UI has a built-in editor that handles simple cases in a minute (choose one version, or blend them, then confirm). Genuinely gnarly conflicts are tech-track territory; your defense in a docs repo is simply small PRs merged promptly, which makes collisions rare.</p>
+        <p><strong>Branch protection:</strong> Settings → Branches → add a rule on main requiring <strong>1 approving review</strong> before merge. That single setting turns review from a favor into a rule - nobody, including the repo owner on a rushed Friday, can push straight to the published truth. It is this week's homework for a reason.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 1 of 3</span>
+      <h2>The full loop, solo <span class="tag demo">★ 8 min · everyone merges</span></h2>
+    </div>
+    <p class="lede">The whole superpower in 8 minutes: one edit travels branch → PR → diff → merge, and you press every button yourself.</p>
+    <div class="steps">
+      <div class="step"><p>Open your handbook repo's README and click the pencil ✏️. Change one sentence - improve a wording, fix a phrase, anything real.</p></div>
+      <div class="step"><p>Press Commit changes, and this time choose <strong>"Create a new branch for this commit and start a pull request."</strong> Name the branch after the change (improve-readme-intro), then Propose changes.</p></div>
+      <div class="step"><p>On the Open a pull request screen, write a one-line description of why, and click Create pull request. You now have a live proposal.</p></div>
+      <div class="step"><p>Click <strong>Files changed</strong> and read your diff: the old sentence in red, yours in green. This is what a reviewer would see.</p></div>
+      <div class="step"><p>Back on Conversation, press <strong>Merge pull request</strong> → Confirm merge → Delete branch. Watch the badge turn purple <strong>Merged</strong>. Check the README on main: your sentence is the published truth, and the PR page is its permanent receipt.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 2 of 3</span>
+      <h2>Pair review: both sides of the flow <span class="tag demo">★ 8 min · in pairs</span></h2>
+    </div>
+    <p class="lede">Author and reviewer are two different feelings - have both today. Pair up with a neighbor (solo attendees: use the presenter's demo repo, invitation link in the room chat).</p>
+    <div class="steps">
+      <div class="step"><p><strong>Partner A</strong> opens a PR on their handbook changing one line (same moves as Apply-along 1), and adds Partner B as a collaborator if needed (Settings → Collaborators).</p></div>
+      <div class="step"><p><strong>Partner B</strong> opens the PR → <strong>Files changed</strong>, hovers a line, clicks the blue +, and leaves one comment ("love this because...").</p></div>
+      <div class="step"><p>Still B: on another line (or the same one), click the ± <strong>suggestion</strong> icon and type an exact replacement wording. Submit the review.</p></div>
+      <div class="step"><p><strong>Partner A</strong> opens the suggestion and clicks <strong>Commit suggestion</strong>. One click - B's exact fix just landed on A's branch, no retyping. Feel that.</p></div>
+      <div class="step"><p><strong>B approves</strong> (Review changes → Approve). <strong>A merges.</strong> Purple badge. Everyone in the room has now been both author and reviewer - the complete collaboration loop.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>The debrief</strong>
+      Notice the suggestion moment: feedback became finished work with one click, fully attributed to both people. That is the button that makes GitHub review kinder AND faster than comments in the margin.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 3 of 3</span>
+      <h2>Which step of the journey is this? <span class="tag demo">★ 6 min · everyone sorts</span></h2>
+    </div>
+    <p class="lede">Six moments from a handbook change. Place each one on the branch → commit → PR → review → merge journey.</p>
+    <div class="widget" data-widget="sorter" data-config='{
+  "title": "★ Which step of the journey is this?",
+  "intro": "Place each moment in the PR journey.",
+  "categories": ["Branch", "Commit", "Pull request", "Review", "Merge"],
+  "items": [
+    {"t": "Make a safe copy of the handbook so your draft cannot break the published truth.", "c": 0, "why": "that is the branch - your parallel workspace"},
+    {"t": "Save your edit with the note: clarify expense policy.", "c": 1, "why": "a commit - the save with your name and reason attached"},
+    {"t": "Tell the team: here is my change, compare it to main and discuss.", "c": 2, "why": "opening the pull request starts the conversation"},
+    {"t": "Suggest replacing the word reimburse with repay on line 12.", "c": 3, "why": "a line suggestion inside a review - the author can accept it in one click"},
+    {"t": "Accept the proposal; the purple badge appears and main is updated.", "c": 4, "why": "the merge - draft becomes published truth, history kept"},
+    {"t": "Fix the typo the reviewer caught - it joins the same open proposal automatically.", "c": 1, "why": "new commits on the branch flow into the open PR - no need to start over"}
+  ]}'></div>
+    <div class="callout tip">
+      <strong>The debrief</strong>
+      The sneaky one is the typo fix: it is a commit, not a new pull request. New saves on the branch flow into the open proposal automatically - you never start over because a reviewer caught something. That is the flow forgiving you by design.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 25 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Every handbook change goes through a branch + PR this week - even solo.</strong> Reading your own red/green diff before merging catches your own mistakes; it is track-changes for an audience of one, and it builds the reflex.</li>
+      <li><strong>Turn on branch protection:</strong> Settings → Branches → add a rule on main requiring 1 approving review. Review just became a rule, not a favor.</li>
+      <li><strong>Close an issue by merging a PR.</strong> Pick one open issue from Session 3's board, make the change on a branch, and put <strong>"closes #3"</strong> (your issue's number) in the PR description. When the PR merges, GitHub closes the issue automatically - work and task, linked forever.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · What actually happens when a pull request is merged?</p>
+      <button class="qopt" type="button">A · The branch and main are both kept as separate permanent copies</button>
+      <button class="qopt" type="button">B · Main is replaced and the old version is deleted to save space</button>
+      <button class="qopt" type="button">C · Main is updated with the branch's changes, and the full history of commits and comments is preserved</button>
+      <p class="qwhy">Merge = draft accepted into the published truth, with the paper trail kept forever. Nothing is lost; the branch itself can be safely deleted because its story moved into main.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · A reviewer leaves a suggestion on line 12. What does that let the author do?</p>
+      <button class="qopt" type="button">A · Click Commit suggestion to accept the reviewer's exact replacement text in one click</button>
+      <button class="qopt" type="button">B · Nothing - suggestions are read-only advice the author retypes by hand</button>
+      <button class="qopt" type="button">C · Merge the pull request without any further approval</button>
+      <p class="qwhy">The suggestion carries the exact fix; Commit suggestion lands it on the branch instantly, credited to both people. Feedback becomes finished work with one click.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · In a pull request diff, what do the red and green lines mean?</p>
+      <button class="qopt" type="button">A · Red = urgent changes, green = optional changes</button>
+      <button class="qopt" type="button">B · Red = text removed, green = text added</button>
+      <button class="qopt" type="button">C · Red = the reviewer's edits, green = the author's edits</button>
+      <p class="qwhy">A changed sentence shows as its old self in red plus its new self in green - the world's best track-changes, and the thing reviewers actually read.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official GitHub Skills coverage</h2>
+    </div>
+    <p class="lede">This course maps to GitHub's own free Skills exercises - each session tells you honestly what is covered here and what the official course adds.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Review pull requests (skills/review-pull-requests)</span><span class="note">the full review flow - comment, suggest, request changes, approve, merge - Parts 2-3 + Apply-along 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Introduction to GitHub - branch + PR loop</span><span class="note">the branch → PR → merge cycle via the web editor - Part 1 + Apply-along 1</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Resolve merge conflicts (skills/resolve-merge-conflicts)</span><span class="note">concept only in the self-study card - the tech track does the driving</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Branch protection rules</span><span class="note">the require-1-review setting, self-study + homework; deeper rulesets are tech track</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Branch</b><span>A parallel copy of the repo for drafting. Main = the published truth. Name branches after the change.</span></div>
+      <div class="cheat-item"><b>Pull request</b><span>"Here is my branch - compare, discuss, accept." Proposal + track-changes + meeting thread in one page.</span></div>
+      <div class="cheat-item"><b>The diff</b><span>Files changed tab. Red = removed, green = added. Read your own before merging.</span></div>
+      <div class="cheat-item"><b>Reviewer moves</b><span>Comment on a line · suggest an exact fix (author clicks Commit suggestion) · request changes · approve.</span></div>
+      <div class="cheat-item"><b>Merge</b><span>Author merges after approval. Purple Merged badge, branch deleted, main updated, history kept.</span></div>
+      <div class="cheat-item"><b>"closes #N"</b><span>Put it in the PR description and the merge auto-closes issue N. Work and task, linked forever.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 6 · learn-github-with-phoebe · by Phoebe Fu</span>
+    <span><a href="03-issues-and-projects.html">← Prev: Issues + Projects</a> &nbsp;·&nbsp; <a href="05-publish-with-pages.html">Next: Publish with GitHub Pages →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/widgets.js?v=1"></script>
+</body>
+</html>

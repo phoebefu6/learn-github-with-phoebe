@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 1 · Meet GitHub - learn github with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-github-with-phoebe</a> / Session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn GitHub with Phoebe · Session 1 of 6 · Non-tech track</div>
+    <h1>Meet GitHub: <span class="accent">the internet's collaboration home</span></h1>
+    <p class="sub">100 million people work on GitHub, and a huge share of them never write code. This session builds your mental map: what GitHub actually is, how accounts, organizations and repositories fit together, and how to read the place like a local. Browser only - no installs, no command line, ever.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Foundation</span>
+      <span class="chip audience">Non-tech professionals</span>
+      <span class="chip audience">Browser only</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Apply-along</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Why a GitHub course with no code in it</h2>
+    </div>
+    <p class="lede">GitHub long ago stopped being just a programmers' tool. Company handbooks live there. Government laws are published there. This very course is hosted there, free. If your team ships anything with engineers - or you simply want the world's best system for working on documents together without emailing final_v3_FINAL.docx - GitHub is worth 6 browser-only sessions. By Session 5 your own handbook is a live website; today you get the map and the keys.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Apply-along - in your browser, everyone does it</span>
+      <span class="pill inkpill">Running artifact: your own handbook repo</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A GitHub account with a profile that looks intentional, the account-org-repo mental map that makes the whole site legible, and the five-tab anatomy of any repository - so tomorrow, when someone sends you a GitHub link, you know exactly where you are landing.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHAT GITHUB IS ============ -->
+  <section class="section" id="what-github-is">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the place itself</span>
+      <h2>What GitHub actually is <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Underneath: a system that remembers every version of every file, forever, with a name on every change. On top: the world's largest collaboration site. The version-control engine is called git (tech track's business); everything you need lives in the web layer above it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hub diagram: GitHub in the center, around it code, handbooks, laws, courses, designs, data - with the three superpowers below">
+        <style>
+          .mgT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .mgS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .9; }
+          .mgH { font: 700 15px Inter, sans-serif; fill: #1F2328; }
+          .mgX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .mgG { font: 700 13px Inter, sans-serif; fill: #1F883D; }
+          .mgL { stroke: #AFB8C1; stroke-width: 2; fill: none; }
+        </style>
+        <rect x="330" y="105" width="220" height="64" rx="14" fill="#1B1F23"/>
+        <text class="mgT" x="352" y="132" style="font-size:16px">GitHub</text>
+        <text class="mgS" x="352" y="152">every version, every author, forever</text>
+        <line class="mgL" x1="330" y1="120" x2="235" y2="70"/>
+        <line class="mgL" x1="330" y1="155" x2="235" y2="205"/>
+        <line class="mgL" x1="550" y1="120" x2="645" y2="70"/>
+        <line class="mgL" x1="550" y1="155" x2="645" y2="205"/>
+        <rect x="60" y="38" width="175" height="52" rx="10" fill="#2DA44E"/>
+        <text class="mgT" x="76" y="60">Software</text>
+        <text class="mgS" x="76" y="78">the original tenant</text>
+        <rect x="60" y="180" width="175" height="52" rx="10" fill="#2DA44E"/>
+        <text class="mgT" x="76" y="202">Handbooks &amp; docs</text>
+        <text class="mgS" x="76" y="220">whole companies run on them</text>
+        <rect x="645" y="38" width="175" height="52" rx="10" fill="#2DA44E"/>
+        <text class="mgT" x="661" y="60">Laws &amp; standards</text>
+        <text class="mgS" x="661" y="78">Germany's laws are on GitHub</text>
+        <rect x="645" y="180" width="175" height="52" rx="10" fill="#2DA44E"/>
+        <text class="mgT" x="661" y="202">Courses &amp; sites</text>
+        <text class="mgS" x="661" y="220">this course lives here too</text>
+        <text class="mgG" x="60" y="272">Superpower 1 · perfect memory (history)</text>
+        <text class="mgG" x="370" y="272">Superpower 2 · proposals, not overwrites</text>
+        <text class="mgG" x="672" y="272">Superpower 3 · work in the open</text>
+        <text class="mgX" x="60" y="292">If a thing is made of text files, GitHub is the best place on earth to make it together. That includes far more than code.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one engine, many tenants, three superpowers</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The three superpowers, in office terms<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Perfect memory.</strong> Every save ("commit") keeps the old version and records who changed what, when, and why. Nothing is ever lost to "whoops, I saved over it". The Word version of this is track-changes that never expires and never bloats.</li>
+          <li><strong>Proposals, not overwrites.</strong> Nobody edits the master document directly. You propose a change, colleagues see exactly what would change, discuss it, then accept. That flow (the "pull request", Session 4) is the single best idea GitHub exports to non-tech work.</li>
+          <li><strong>Work in the open.</strong> Public repos mean anyone can read, learn from, and build on your work - which is why 100M+ people and most of the world's software companies are here, and why a good GitHub presence has become a public portfolio.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Germany's federal laws</strong> are mirrored on GitHub (the "gesetze" repos): citizens can see every amendment as a tracked change, diffed line by line, with history back through time. No code anywhere - just the three superpowers applied to legislation. If it works for a legal code, it works for your team handbook.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Git vs GitHub: the one distinction people mix up<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>git (lowercase) is the version-control engine - a command-line tool from 2005 that developers run on their machines. GitHub is a company and website (2008) that hosts git repositories and adds everything friendly on top: the web interface, issues, pull requests, profiles, Pages websites.</p>
+        <ul>
+          <li>You can use git without GitHub (some companies host elsewhere: GitLab, Bitbucket).</li>
+          <li><strong>You can use GitHub without ever touching git</strong> - that is this entire track. The web UI covers creating, editing, proposing and publishing.</li>
+          <li>When a developer says "clone", "push" or "pull", they are speaking git. Session 6 gives you the phrasebook; the tech track teaches the driving.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE MENTAL MAP ============ -->
+  <section class="section" id="mental-map">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · accounts, orgs, repos</span>
+      <h2>The mental map <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Every GitHub URL decodes the same way: <strong>github.com / who / what</strong>. The "who" is a personal account or an organization; the "what" is a repository - one project's home. Learn to read that address bar and you can never get lost.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map: personal account and organization at top, repositories under each, URL anatomy at the bottom">
+        <style>
+          .mmT { font: 700 13.5px Inter, sans-serif; fill: #FFFFFF; }
+          .mmS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .9; }
+          .mmX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .mmU { font: 700 15px "SF Mono", Menlo, monospace; fill: #1F2328; }
+          .mmB { font: 700 12px Inter, sans-serif; fill: #0969DA; }
+          .mmL { stroke: #AFB8C1; stroke-width: 2; fill: none; }
+        </style>
+        <rect x="95" y="30" width="240" height="56" rx="12" fill="#1B1F23"/>
+        <text class="mmT" x="112" y="53">Personal account</text>
+        <text class="mmS" x="112" y="72">@phoebe - you, your face, your repos</text>
+        <rect x="545" y="30" width="240" height="56" rx="12" fill="#1B1F23"/>
+        <text class="mmT" x="562" y="53">Organization</text>
+        <text class="mmS" x="562" y="72">@centience - a team, shared repos</text>
+        <line class="mmL" x1="215" y1="86" x2="150" y2="140"/>
+        <line class="mmL" x1="215" y1="86" x2="290" y2="140"/>
+        <line class="mmL" x1="665" y1="86" x2="600" y2="140"/>
+        <line class="mmL" x1="665" y1="86" x2="740" y2="140"/>
+        <rect x="60" y="143" width="180" height="50" rx="10" fill="#2DA44E"/>
+        <text class="mmT" x="74" y="164">handbook</text>
+        <text class="mmS" x="74" y="182">public repo</text>
+        <rect x="255" y="143" width="180" height="50" rx="10" fill="#2DA44E"/>
+        <text class="mmT" x="269" y="164">meeting-notes</text>
+        <text class="mmS" x="269" y="182">private repo 🔒</text>
+        <rect x="510" y="143" width="180" height="50" rx="10" fill="#2DA44E"/>
+        <text class="mmT" x="524" y="164">client-site</text>
+        <text class="mmS" x="524" y="182">team-owned, role-based access</text>
+        <rect x="705" y="143" width="145" height="50" rx="10" fill="#2DA44E"/>
+        <text class="mmT" x="719" y="164">brand-kit</text>
+        <text class="mmS" x="719" y="182">private 🔒</text>
+        <rect x="95" y="225" width="690" height="42" rx="10" fill="#DAFBE1"/>
+        <text class="mmU" x="130" y="252">github.com / <tspan fill="#0969DA">phoebe</tspan> / <tspan fill="#1F883D">handbook</tspan></text>
+        <text class="mmB" x="248" y="290">who owns it</text>
+        <text class="mmB" x="420" y="290">which project</text>
+        <text class="mmX" x="560" y="290">one repo = one project's whole home</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the address bar tells you who and what, every time</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Repository = one project's home<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A repository ("repo") holds one project's files plus everything about the work: its history, its task list, its proposals in flight. Think of it as a shared folder that grew up - the folder plus the track-changes, the todo list, and the review process, all in one address.</p>
+        <ul>
+          <li><strong>Public repo:</strong> anyone on the internet can read (only invited people can change). This is how open source, handbooks and portfolios work.</li>
+          <li><strong>Private repo:</strong> invisible except to people you invite. Default for internal work.</li>
+          <li><strong>One project, one repo.</strong> Resist the mega-repo-for-everything instinct; addresses stay meaningful when scope stays tight.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The non-tech move</strong>
+          When an engineer shares a GitHub link, read the URL before the page: who owns this, which project, and - after the repo name - which tab you have been dropped into. Orientation beats scrolling.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The five tabs of every repo<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Tab</th><th>What it holds</th><th>Your session</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Code</strong></td><td>the files themselves + the README front door</td><td>Session 2</td></tr>
+            <tr><td><strong>Issues</strong></td><td>the task list: bugs, ideas, todos, questions</td><td>Session 3</td></tr>
+            <tr><td><strong>Pull requests</strong></td><td>proposed changes under discussion</td><td>Session 4</td></tr>
+            <tr><td><strong>Projects</strong></td><td>kanban boards built from issues</td><td>Session 3</td></tr>
+            <tr><td><strong>Settings</strong></td><td>visibility, collaborators, Pages publishing</td><td>Session 5</td></tr>
+          </tbody>
+        </table>
+        <p>("Actions", "Wiki", "Insights" and friends exist too - Session 6 gives you the literacy-level tour.)</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: SOCIAL LAYER ============ -->
+  <section class="section" id="social">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the social network hiding in plain sight</span>
+      <h2>Profiles, stars and reading the room <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">GitHub is also a social network - the professional kind that shows work instead of talking about it. Three verbs run it: <strong>star</strong> (bookmark + applause), <strong>follow</strong> (see what a person is up to), <strong>watch</strong> (get notified about a repo). Your profile is the landing page recruiters and collaborators actually check.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Stars, follows, and what a good profile signals<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Stars</strong> are the currency of credibility for projects - a bookmark that doubles as applause. 1,000+ stars means a community trusts it. You will use star counts in Session 6's repo-health read.</li>
+          <li><strong>Your profile</strong> shows your photo, bio, pinned repos and a contribution graph (the green squares). Empty profile = missed free real estate; a photo, a one-line bio and 2-3 pinned repos already puts you ahead of most.</li>
+          <li><strong>The profile README</strong> is GitHub's best-kept non-tech secret: create a repo named exactly your username, and its README renders at the top of your profile page - a free personal landing page. That is today's third apply-along.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The handbook company:</strong> GitLab (yes, a competitor) famously runs its entire 2,000-person company on a public handbook - policies, salaries formula, processes - maintained exactly the way you will maintain yours: proposals, reviews, versions. Non-tech staff make most of the edits. The pattern you are learning this course IS a real operating model.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Explore and trending: finding good stuff<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>github.com/explore and github.com/trending surface what the world is starring right now. Two non-tech uses:</p>
+        <ul>
+          <li><strong>Market radar:</strong> trending repos in your industry's topics (search "awesome analytics", "handbook", your domain) show where tooling and practice are heading - weeks before the blog posts.</li>
+          <li><strong>Template shopping:</strong> almost anything you want to make (handbook, portfolio, course site, policy pack) has a starred template repo you can copy. Star liberally; your stars page becomes your library.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 1 of 3</span>
+      <h2>Set up your account like you mean it <span class="tag demo">★ 8 min · everyone signs up</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Go to github.com and create your account (or sign in). Username advice: close to your real or professional name - it appears in every URL you will ever share. Skip all paid upsells; everything in this course is free.</p></div>
+      <div class="step"><p>Settings → Profile: add a photo and a one-line bio saying what you do ("Data PM at ...", "Ops lead, building the team handbook"). Two fields, disproportionate signal.</p></div>
+      <div class="step"><p>Visit one famous repo as a tourist: <strong>github.com/github/docs</strong> (GitHub's own documentation - largely prose, heavily contributed to by non-engineers). Find: the README, the star count, the Issues tab, the last-updated time.</p></div>
+      <div class="step"><p>Star it. Congratulations - your library has its first book, and you have read your first repo.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 2 of 3</span>
+      <h2>Where does this live? <span class="tag demo">★ 7 min · everyone sorts</span></h2>
+    </div>
+    <p class="lede">Six things you will meet this course. Place each in its GitHub home - this is the map check.</p>
+    <div class="widget" data-widget="sorter" data-config='{
+      "title": "★ README, Issue, Pull request, or Profile?",
+      "intro": "Click the home each one belongs to. Green = placed correctly.",
+      "categories": ["README", "Issue", "Pull request", "Profile"],
+      "items": [
+        {"t": "The one-page introduction that greets every visitor to your project.", "c": 0, "why": "the README is the front door of a repo - Session 2 writes yours"},
+        {"t": "A task: the Q3 numbers on the dashboard look stale - someone should refresh them.", "c": 1, "why": "issues are the universal todo list, not just bug reports"},
+        {"t": "A proposed edit to the onboarding doc, waiting for two colleagues to approve.", "c": 2, "why": "proposals under review = pull requests, the collaboration heart"},
+        {"t": "Your photo, one-line bio, and the three repos you are proudest of.", "c": 3, "why": "the profile is your landing page - pinned repos are the showcase"},
+        {"t": "A comment from a teammate attached to one specific line of your draft.", "c": 2, "why": "line-level comments live inside a pull request review - Session 4"},
+        {"t": "The month-by-month task list for the website refresh, with owners and labels.", "c": 1, "why": "a set of issues (and Session 3 puts them on a Projects board)"}
+      ]}'></div>
+    <div class="callout tip">
+      <strong>The debrief</strong>
+      Notice what just happened: four homes cover essentially everything on GitHub. If you know which home a thing belongs to, you can always find it - or file it.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 3 of 3</span>
+      <h2>Claim your profile README <span class="tag demo">★ 7 min · everyone publishes</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Top-right + button → <strong>New repository</strong>. Name it EXACTLY your username. GitHub reveals the easter egg: "You found a secret! This repository's README.md will appear on your public profile."</p></div>
+      <div class="step"><p>Keep it Public, tick <strong>Add a README file</strong>, click Create repository. That is your first repo - made entirely in the browser.</p></div>
+      <div class="step"><p>Click the pencil ✏️ on the README, replace the contents with two lines about yourself, press <strong>Commit changes</strong>. That green button just made your first commit - a save with your name and a note on it.</p></div>
+      <div class="step"><p>Visit github.com/yourusername - your words are on your profile, live on the internet. Session 2 teaches the markdown to make it beautiful.</p></div>
+    </div>
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p>Browse a few profile READMEs for inspiration afterwards (search "awesome profile README"). Some are resumes, some are dashboards, some are art. Yours starts as two honest lines - that already beats blank.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 20 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Tourist visits:</strong> open three repos from your world (a tool your team uses, a template you might want, anything trending). For each, find README, stars, last update, open issues count. Two minutes each - the reading gets automatic fast.</li>
+      <li><strong>Star five repos</strong> worth keeping. Your stars page is now a library.</li>
+      <li><strong>Finish your profile:</strong> photo, bio, profile README with 3-5 lines. Pin the repo.</li>
+      <li><strong>Optional deep end:</strong> the official Skills course <em>Introduction to GitHub</em> (github.com/skills/introduction-to-github) - 30 min, hands-on, covers today plus a preview of Session 4's flow.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · A colleague sends you github.com/centience/client-site. What do you know before clicking?</p>
+      <button class="qopt" type="button">A · Nothing - GitHub URLs are random</button>
+      <button class="qopt" type="button">B · It is a project called client-site owned by the centience organization</button>
+      <button class="qopt" type="button">C · It is a personal website belonging to someone named centience</button>
+      <p class="qwhy">github.com/who/what - centience is the owner (an org, in this case), client-site is the repo. The address bar is the map.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · What is a "commit", in office terms?</p>
+      <button class="qopt" type="button">A · A promise to finish the project by a deadline</button>
+      <button class="qopt" type="button">B · Deleting the old version so only the new one remains</button>
+      <button class="qopt" type="button">C · A save with your name and a note attached, kept in the permanent history</button>
+      <p class="qwhy">Every commit preserves what came before and records who, when and why. Perfect memory is superpower number one.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · The secret to putting a personal intro on top of your profile page is...</p>
+      <button class="qopt" type="button">A · A public repo named exactly your username, whose README renders on your profile</button>
+      <button class="qopt" type="button">B · Paying for GitHub Pro</button>
+      <button class="qopt" type="button">C · Emailing GitHub support to enable it</button>
+      <p class="qwhy">The username-repo README is a free easter egg - you built it in Apply-along 3. Session 2's markdown makes it shine.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official GitHub Skills coverage</h2>
+    </div>
+    <p class="lede">This course maps to GitHub's own free Skills exercises - each session tells you honestly what is covered here and what the official course adds.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Introduction to GitHub (skills/introduction-to-github)</span><span class="note">what GitHub is, repos, commits via web UI - Parts 1-2 + Apply-alongs 1 and 3; its branch/PR preview returns in Session 4</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Account, org, repo mental map</span><span class="note">URL anatomy, public vs private - Part 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The social layer</span><span class="note">stars, follows, profile README easter egg - Part 3 + Apply-along 3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">git the engine (git vs GitHub)</span><span class="note">distinction only - driving the CLI is the tech track</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Explore / trending as market radar</span><span class="note">self-study card, Part 3</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The address</b><span>github.com / who / what. Who = person or org. What = repo (one project's whole home).</span></div>
+      <div class="cheat-item"><b>Three superpowers</b><span>Perfect memory (history) · proposals not overwrites (PRs) · work in the open (public repos).</span></div>
+      <div class="cheat-item"><b>Commit</b><span>A save with your name and a note, kept forever. The green button in the web editor.</span></div>
+      <div class="cheat-item"><b>Five tabs</b><span>Code (files + README) · Issues (todos) · Pull requests (proposals) · Projects (boards) · Settings.</span></div>
+      <div class="cheat-item"><b>Social verbs</b><span>Star = bookmark + applause · Follow = person · Watch = repo notifications.</span></div>
+      <div class="cheat-item"><b>Profile README</b><span>Repo named exactly your username → its README tops your profile. Free landing page.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 1 of 6 · learn-github-with-phoebe · by Phoebe Fu</span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="02-first-repo-markdown.html">Next: Your first repo + Markdown →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/widgets.js?v=1"></script>
+</body>
+</html>

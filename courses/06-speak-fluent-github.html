@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 6 · Speak fluent GitHub - learn github with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-github-with-phoebe</a> / Session 6 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn GitHub with Phoebe · Session 6 of 6 · Non-tech track</div>
+    <h1>Speak fluent GitHub: <span class="accent">read any repo like a local</span></h1>
+    <p class="sub">The graduation session. Your handbook has been live on the internet since Session 5 - today you learn the last three fluencies: what the robots (Actions) do and how to read their green checks, how to size up any repository in 90 seconds the way professionals do, and the ten words that cover 90% of developer conversation. Browser only, as always - no installs, no command line.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Stretch</span>
+      <span class="chip audience">Non-tech professionals</span>
+      <span class="chip audience">Browser only</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-17 · Concepts</span>
+      <span class="a3" style="flex:5">17-38 · Apply-along</span>
+      <span class="a4" style="flex:1">38-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Graduation day: fluency, not driving lessons</h2>
+    </div>
+    <p class="lede">Five sessions ago a GitHub link was a foreign country. Now you own a repo, run a task board, review proposals, and publish a live website. What is left is the fluency layer: the green checks that appear on commits and pull requests, the health read that tells you whether a repo deserves your trust, and the vocabulary developers actually use in meetings. None of it requires writing anything - it requires knowing how to read.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Apply-along - in your browser, everyone does it</span>
+      <span class="pill inkpill">Running artifact: your handbook repo, live since Session 5</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      The ability to read any repo's health in 90 seconds, one real robot installed and commenting on your own handbook repo, and a ten-word phrasebook that lets you follow (and join) developer conversations without bluffing. That is the whole non-tech track, complete.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: ACTIONS AT LITERACY LEVEL ============ -->
+  <section class="section" id="actions-literacy">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the robots</span>
+      <h2>The green checks: Actions at literacy level <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">GitHub Actions are robots that run when something happens: a merge, a schedule, a pull request opening. Each robot runs its checklist and reports back as the little icons you have already seen on commits and PRs - the green check, the red X, the yellow dot. You never need to build a robot. You need to read its verdict.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline: three events on the left feed a robot in the middle, which produces one of three verdicts - green check, yellow dot, or red X">
+        <style>
+          .acT { font: 700 13.5px Inter, sans-serif; fill: #FFFFFF; }
+          .acS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .9; }
+          .acI { font: 700 13.5px Inter, sans-serif; fill: #1F2328; }
+          .acJ { font: 400 11.5px Inter, sans-serif; fill: #656D76; }
+          .acX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .acL { stroke: #AFB8C1; stroke-width: 2; fill: none; marker-end: url(#acArr); }
+        </style>
+        <defs>
+          <marker id="acArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#AFB8C1"/>
+          </marker>
+        </defs>
+        <rect x="40" y="36" width="190" height="48" rx="10" fill="#1B1F23"/>
+        <text class="acT" x="56" y="57">A merge happens</text>
+        <text class="acS" x="56" y="75">event</text>
+        <rect x="40" y="126" width="190" height="48" rx="10" fill="#1B1F23"/>
+        <text class="acT" x="56" y="147">Every Monday, 9am</text>
+        <text class="acS" x="56" y="165">a schedule</text>
+        <rect x="40" y="216" width="190" height="48" rx="10" fill="#1B1F23"/>
+        <text class="acT" x="56" y="237">A pull request opens</text>
+        <text class="acS" x="56" y="255">event</text>
+        <line class="acL" x1="230" y1="60" x2="322" y2="132"/>
+        <line class="acL" x1="230" y1="150" x2="322" y2="150"/>
+        <line class="acL" x1="230" y1="240" x2="322" y2="168"/>
+        <rect x="330" y="114" width="220" height="72" rx="14" fill="#8250DF"/>
+        <text class="acT" x="350" y="143" style="font-size:15px">The robot (an Action)</text>
+        <text class="acS" x="350" y="164">runs its checklist, every time</text>
+        <line class="acL" x1="550" y1="132" x2="638" y2="60"/>
+        <line class="acL" x1="550" y1="150" x2="638" y2="150"/>
+        <line class="acL" x1="550" y1="168" x2="638" y2="240"/>
+        <rect x="645" y="36" width="195" height="48" rx="10" fill="#2DA44E"/>
+        <text class="acT" x="661" y="57">✓ Green check</text>
+        <text class="acS" x="661" y="75">passed - safe to merge</text>
+        <rect x="645" y="126" width="195" height="48" rx="10" fill="#F6F8FA" stroke="#AFB8C1"/>
+        <text class="acI" x="661" y="147">● Yellow dot</text>
+        <text class="acJ" x="661" y="165">still running - wait</text>
+        <rect x="645" y="216" width="195" height="48" rx="10" fill="#B42318"/>
+        <text class="acT" x="661" y="237">✗ Red X</text>
+        <text class="acS" x="661" y="255">failed - ask before merging</text>
+        <text class="acX" x="40" y="292">Same robot, same checklist, every time. You never run it yourself - you read the verdict and act accordingly.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - event in, robot runs, verdict out</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Reading the robot's verdict<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Green check ✓</strong> next to a commit or on a PR: every automated check passed. For a non-dev this reads as "safe to merge" - the robots found nothing wrong.</li>
+          <li><strong>Red X ✗</strong>: at least one check failed. Not a catastrophe - it means "ask before merging". Someone who understands that check decides whether it matters.</li>
+          <li><strong>Yellow dot ●</strong>: the robot is still running. Wait; it turns into a check or an X within minutes.</li>
+          <li>Robots run on <strong>events</strong>: a merge landing, a PR opening, a fixed schedule. That is why the checks appear by themselves - nobody is pressing a button.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>You already employ a robot</strong>
+          Your handbook site from Session 5 redeploys itself every time you commit - that is the Pages deploy robot at work. Open your repo's Actions tab and you will find its run history, one row per publish, green checks all the way down.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The Marketplace: robots you install without writing anything<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The GitHub Marketplace is an app store for robots. Thousands of ready-made Actions install with clicks, not code:</p>
+        <ul>
+          <li><strong>Spell-checkers</strong> that flag typos in every proposed change to your handbook.</li>
+          <li><strong>Link-checkers</strong> that test every hyperlink on a schedule and open an issue when one dies.</li>
+          <li><strong>Greeters</strong> that welcome first-time contributors with a friendly comment.</li>
+        </ul>
+        <p>Installing means committing a small config file GitHub writes for you - you click the green Commit button, exactly like editing any other file. Writing new robots (the YAML inside) is tech-track territory, and you never need it to benefit from them.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: READING A REPO ============ -->
+  <section class="section" id="repo-read">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the health read</span>
+      <h2>Reading a repo like a pro <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Professionals do not read a repo's code first - they read its vital signs. Six stops, 90 seconds, and you know whether a project is alive, maintained, and legal to use. This is data literacy applied to software: these are health metrics for tools your team might adopt.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The 90-second repo read: six numbered stops - README, last commit, Issues, Releases, License, stars">
+        <style>
+          .rrN { font: 700 13px Inter, sans-serif; fill: #FFFFFF; }
+          .rrT { font: 700 13.5px Inter, sans-serif; fill: #1F2328; }
+          .rrS { font: 400 11.5px Inter, sans-serif; fill: #656D76; }
+          .rrX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .rrL { stroke: #AFB8C1; stroke-width: 2; fill: none; marker-end: url(#rrArr); }
+        </style>
+        <defs>
+          <marker id="rrArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#AFB8C1"/>
+          </marker>
+        </defs>
+        <rect x="40" y="36" width="240" height="64" rx="10" fill="#DAFBE1"/>
+        <circle cx="66" cy="60" r="13" fill="#2DA44E"/><text class="rrN" x="62" y="65">1</text>
+        <text class="rrT" x="88" y="65">README</text>
+        <text class="rrS" x="56" y="88">what is it + how do I start?</text>
+        <rect x="320" y="36" width="240" height="64" rx="10" fill="#DAFBE1"/>
+        <circle cx="346" cy="60" r="13" fill="#2DA44E"/><text class="rrN" x="342" y="65">2</text>
+        <text class="rrT" x="368" y="65">Last commit</text>
+        <text class="rrS" x="336" y="88">alive in the last 6 months?</text>
+        <rect x="600" y="36" width="240" height="64" rx="10" fill="#DAFBE1"/>
+        <circle cx="626" cy="60" r="13" fill="#2DA44E"/><text class="rrN" x="622" y="65">3</text>
+        <text class="rrT" x="648" y="65">Issues</text>
+        <text class="rrS" x="616" y="88">answered or ignored?</text>
+        <line class="rrL" x1="280" y1="68" x2="315" y2="68"/>
+        <line class="rrL" x1="560" y1="68" x2="595" y2="68"/>
+        <line class="rrL" x1="720" y1="100" x2="160" y2="140"/>
+        <rect x="40" y="144" width="240" height="64" rx="10" fill="#DAFBE1"/>
+        <circle cx="66" cy="168" r="13" fill="#2DA44E"/><text class="rrN" x="62" y="173">4</text>
+        <text class="rrT" x="88" y="173">Releases</text>
+        <text class="rrS" x="56" y="196">named, dated versions?</text>
+        <rect x="320" y="144" width="240" height="64" rx="10" fill="#DAFBE1"/>
+        <circle cx="346" cy="168" r="13" fill="#2DA44E"/><text class="rrN" x="342" y="173">5</text>
+        <text class="rrT" x="368" y="173">License</text>
+        <text class="rrS" x="336" y="196">may we use it at work?</text>
+        <rect x="600" y="144" width="240" height="64" rx="10" fill="#DAFBE1"/>
+        <circle cx="626" cy="168" r="13" fill="#2DA44E"/><text class="rrN" x="622" y="173">6</text>
+        <text class="rrT" x="648" y="173">Stars</text>
+        <text class="rrS" x="616" y="196">trusted in its niche?</text>
+        <line class="rrL" x1="280" y1="176" x2="315" y2="176"/>
+        <line class="rrL" x1="560" y1="176" x2="595" y2="176"/>
+        <text class="rrX" x="40" y="240">90 seconds, six stops. Alive beats popular: a fresh commit outweighs a big star count every time.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the 90-second repo read, stop by stop</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The six stops, and what each one tells you<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>README:</strong> does it say what this is and how to start, above the fold? A repo that cannot introduce itself will not document anything else either.</li>
+          <li><strong>Last commit date:</strong> is it alive? Activity in the last six months is the pulse check that outweighs everything else.</li>
+          <li><strong>Issues:</strong> are recent questions answered or ignored? Responsive maintainers are the difference between a tool and a liability.</li>
+          <li><strong>Releases:</strong> named, dated versions signal a project that ships deliberately rather than drifting.</li>
+          <li><strong>License:</strong> no license file means you technically cannot reuse it at work. A 30-second check that saves legal headaches.</li>
+          <li><strong>Stars, in context:</strong> 1,000+ means a community trusts it - but a 50-star niche tool can be perfect for a niche job. Context beats raw count.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Tech due diligence runs this exact read.</strong> When a professional evaluates an open-source tool before recommending it - to a team, a client, or an investment committee - they check maintenance activity, issue responsiveness, release discipline and license terms before a single line of code. You are learning the same read; it just takes you 90 seconds instead of a consulting engagement.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Stars in context: popular is not the same as healthy<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Star counts are applause accumulated over a project's whole life - they never go down. That makes them a trust signal with a blind spot:</p>
+        <ul>
+          <li>A repo with 20,000 stars and no commit in three years is a museum piece: admired, abandoned, and risky to depend on.</li>
+          <li>A 50-star repo maintained weekly by a specialist can be exactly the right tool for a specialist job.</li>
+          <li>Rule of thumb: stars answer "did people ever love this?"; the last commit answers "does anyone still care?". You need both, and the second matters more.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE PHRASEBOOK ============ -->
+  <section class="section" id="phrasebook">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the vocabulary</span>
+      <h2>The phrasebook <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Ten words cover 90% of developer-speak in an office. You already own half of them from Sessions 1-5; here is the full set, each with the sentence you will actually hear.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Ten words, ten office sentences<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Word</th><th>Plain meaning</th><th>As heard in the office</th></tr></thead>
+          <tbody>
+            <tr><td><strong>fork</strong></td><td>your personal copy of someone else's repo, changeable freely</td><td>"Just fork it and experiment on your own copy."</td></tr>
+            <tr><td><strong>clone</strong></td><td>download a repo to a laptop - CLI-land, tech track</td><td>"I will clone it tonight and poke around locally."</td></tr>
+            <tr><td><strong>push / pull</strong></td><td>send changes up / get changes down - also CLI-land</td><td>"Pushed my edits, pull before you start."</td></tr>
+            <tr><td><strong>upstream</strong></td><td>the original repo you forked from</td><td>"Sync your fork with upstream first."</td></tr>
+            <tr><td><strong>CI</strong></td><td>the robot checks - continuous integration</td><td>"CI is red, do not merge yet."</td></tr>
+            <tr><td><strong>merge conflict</strong></td><td>two edits collided on the same lines; a human must choose</td><td>"There is a conflict, I will resolve it after lunch."</td></tr>
+            <tr><td><strong>release</strong></td><td>a named, frozen, dated version for the world</td><td>"We cut a release on Fridays."</td></tr>
+            <tr><td><strong>stale</strong></td><td>no activity for a long time</td><td>"That branch is stale, close it."</td></tr>
+            <tr><td><strong>LGTM</strong></td><td>looks good to me - approval slang in a review</td><td>"LGTM, merging after the checks go green."</td></tr>
+          </tbody>
+        </table>
+        <p>Fork, upstream, CI, release, stale and LGTM you can now use yourself. Clone, push and pull are the CLI verbs - recognize them, point at the tech track, and stay happily in your browser.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Safety basics: the four rules that keep you out of the news<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Public means the whole internet can read it.</strong> Not "people with the link" - everyone, forever, including search engines and AI training crawlers.</li>
+          <li><strong>Never commit passwords, API keys, or personal data.</strong> History is permanent (superpower 1 cuts both ways) - deleting a secret in a later commit does not unpublish it from history.</li>
+          <li><strong>GitHub scans for leaked secrets</strong> and alerts you, but prevention beats scanning. Treat every commit box like a public noticeboard.</li>
+          <li><strong>Private repos plus organization roles are the workplace default.</strong> Your company's work lives in private repos where access is invitation-only and role-based - public is a deliberate choice, never an accident.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ APPLY-ALONG 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 1 of 3</span>
+      <h2>Evaluate a real repo <span class="tag demo">★ 8 min · everyone scores</span></h2>
+    </div>
+    <p class="lede">Run the 90-second read for real, with a scorecard keeping you honest.</p>
+    <div class="widget" data-widget="checklist" data-config='{
+  "title": "★ Repo health scorecard - run the 90-second read",
+  "intro": "Open any repo your team uses (or github/docs) and tick what you find.",
+  "items": [
+    {"t": "README answers what it is and how to start, above the fold", "pts": 2},
+    {"t": "A commit in the last 6 months", "pts": 2, "why": "alive beats popular - abandoned repos with high stars are museum pieces"},
+    {"t": "Recent issues have maintainer responses", "pts": 2},
+    {"t": "Releases (or a changelog) exist, with dates", "pts": 1},
+    {"t": "A license file is present", "pts": 1, "why": "no license = you technically cannot reuse it at work"},
+    {"t": "Star count makes sense for its niche", "pts": 1}
+  ],
+  "verdicts": [
+    {"min": 80, "label": "Healthy - safe to rely on", "tone": "good", "note": "This repo is maintained and legible. Adopt with confidence."},
+    {"min": 45, "label": "Usable, with caveats", "tone": "mid", "note": "Note what is missing and decide if you can live with it. Ask the maintainers - responsive ones upgrade the verdict."},
+    {"min": 0, "label": "Walk away (or fork it)", "tone": "bad", "note": "Unmaintained and unclear. If you truly need it, a fork under your control beats depending on a ghost."}
+  ]}'></div>
+    <div class="steps">
+      <div class="step"><p>Together first: open <strong>github.com/github/docs</strong> and run the read as a group - README, last commit, Issues, Releases, License, stars. Tick the scorecard as you go.</p></div>
+      <div class="step"><p>Solo: each person picks a repo from their own world - a tool your team uses, a template you starred in Session 1 - and scores it.</p></div>
+      <div class="step"><p>Compare verdicts. Anyone find a museum piece? A hidden gem with 40 stars? The disagreements are the learning.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ APPLY-ALONG 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 2 of 3</span>
+      <h2>Install one robot <span class="tag demo">★ 7 min · everyone hires</span></h2>
+    </div>
+    <p class="lede">You will install a ready-made Action on your handbook repo and watch it work. No YAML editing beyond clicking Commit - the point is reading robots, not writing them.</p>
+    <div class="steps">
+      <div class="step"><p>Open your handbook repo → <strong>Actions</strong> tab → <strong>New workflow</strong>. GitHub suggests ready-made workflows and links to the Marketplace.</p></div>
+      <div class="step"><p>Pick a simple one - the <strong>greetings</strong> workflow (welcomes first-time contributors) or a link checker from the suggestions both work well.</p></div>
+      <div class="step"><p>Click <strong>Configure</strong>, then commit the file GitHub wrote for you via the green <strong>Commit changes</strong> button. You just hired a robot with two clicks.</p></div>
+      <div class="step"><p>Open a small test pull request on your handbook (Session 4 muscle memory) and watch the robot show up - a comment, a check, a yellow dot turning green.</p></div>
+      <div class="step"><p>Visit the Actions tab again: your robot now has a run history, right next to the Pages deploy robot that has been working for you since Session 5.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ APPLY-ALONG 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 3 of 3</span>
+      <h2>Phrasebook check <span class="tag demo">★ 6 min · everyone translates</span></h2>
+    </div>
+    <p class="lede">Six sentences overheard in real offices. Translate each to its GitHub concept - if you can sort these, you can follow the standup.</p>
+    <div class="widget" data-widget="sorter" data-config='{
+  "title": "★ What did the developer just say?",
+  "intro": "Translate each sentence to its GitHub concept.",
+  "categories": ["Copying", "Proposing", "Robot checks", "Publishing"],
+  "items": [
+    {"t": "Just fork it and try your edits on your own copy.", "c": 0, "why": "fork = your personal copy of someone else's repo, changeable freely"},
+    {"t": "I will clone the repo tonight and look on my laptop.", "c": 0, "why": "clone = download the repo to a machine - CLI-land, tech track"},
+    {"t": "Open a draft PR so we can see where you are heading.", "c": 1, "why": "draft pull request = proposal shared early, not ready for review"},
+    {"t": "CI is red, do not merge yet.", "c": 2, "why": "the robot checks failed - green check first, then merge"},
+    {"t": "We cut a release on Fridays.", "c": 3, "why": "release = a named, frozen, dated version for the world"},
+    {"t": "LGTM, merging after the checks go green.", "c": 1, "why": "approval slang inside a review: looks good to me"}
+  ]}'></div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>The graduation lap <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Run the health read on 3 repos</strong> from your world - a tool, a template, something trending. By the third one it takes you under two minutes.</li>
+      <li><strong>Install one more robot</strong> if the first felt good - a spell-checker or link-checker earns its keep on a handbook.</li>
+      <li><strong>Write the capstone handbook page:</strong> "How we use GitHub" - your team's conventions for issues, branches, PRs and publishing, using everything from Sessions 1-5. Propose it as a PR, naturally.</li>
+      <li><strong>Star this course's repo</strong> 😉 - you know exactly what that signal means now.</li>
+      <li><strong>Tech-track teaser:</strong> if the driving lessons now tempt you - git CLI, branching strategies, conflict surgery, writing your own Actions - they live in <em>learn-github-for-builders-with-phoebe</em> (coming). This track's promise stands: you never needed them.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you graduate 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · A pull request shows a red X. As a non-dev, what does that mean for you?</p>
+      <button class="qopt" type="button">A · The PR is rejected and must be closed immediately</button>
+      <button class="qopt" type="button">B · Nothing - red X marks are decorative</button>
+      <button class="qopt" type="button">C · An automated check failed - ask before merging</button>
+      <p class="qwhy">Red X = at least one robot check failed. It is a "pause and ask" signal, not a verdict on the idea. Green check first, then merge.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · A repo has 20,000 stars but its last commit was 3 years ago. Your read?</p>
+      <button class="qopt" type="button">A · Museum piece - admired once, abandoned now; alive beats popular</button>
+      <button class="qopt" type="button">B · Excellent - stars are the ultimate health metric</button>
+      <button class="qopt" type="button">C · Impossible - GitHub deletes inactive repos</button>
+      <p class="qwhy">Stars never go down, so they measure the past. The last commit measures the present - and the present is what you would be depending on.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · A repo you want to use at work has no license file. What does that mean?</p>
+      <button class="qopt" type="button">A · It is automatically free for any use</button>
+      <button class="qopt" type="button">B · You technically cannot reuse it at work - no license means no permission granted</button>
+      <button class="qopt" type="button">C · Licenses only matter for code, not documents</button>
+      <p class="qwhy">Public to read is not licensed to reuse. No license file means the author kept all rights - a 30-second check that belongs in every health read.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official GitHub Skills coverage</h2>
+    </div>
+    <p class="lede">The honest map of what this session covers versus GitHub's own Skills courses - and what stays out on purpose.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">hello-github-actions (skills/hello-github-actions)</span><span class="note">literacy level - read verdicts + install from Marketplace; authoring workflows is the tech track</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">introduction-to-repository-management</span><span class="note">health and community basics - the 90-second read, license and release awareness</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Secure basics (secret scanning, public vs private)</span><span class="note">awareness level - the four safety rules, Part 3 self-study</span></div>
+      <div class="covered-row"><span class="status pill light">✗</span><span class="name">git CLI / merge conflicts / Copilot</span><span class="note">not covered by design - tech track (learn-github-for-builders-with-phoebe)</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The verdicts</b><span>Green check = safe to merge · Red X = ask before merging · Yellow dot = still running, wait.</span></div>
+      <div class="cheat-item"><b>Actions = robots</b><span>They run on events (merge, schedule, PR). Install ready-made ones from the Marketplace with clicks; writing them is tech track.</span></div>
+      <div class="cheat-item"><b>The 90-second read</b><span>README → last commit → Issues → Releases → License → stars in context. Alive beats popular.</span></div>
+      <div class="cheat-item"><b>Phrasebook top rows</b><span>fork = my copy · CI = robot checks · release = frozen version · merge conflict = human must choose · LGTM = approved.</span></div>
+      <div class="cheat-item"><b>CLI-land words</b><span>clone, push, pull = laptop verbs. Recognize them, point at the tech track, stay in the browser.</span></div>
+      <div class="cheat-item"><b>Safety rules</b><span>Public = the whole internet. Never commit secrets - history is forever. Private repos + org roles are the workplace default.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 6 of 6 · learn-github-with-phoebe · by Phoebe Fu</span>
+    <span><a href="05-publish-with-pages.html">← Prev: Publish with GitHub Pages</a> &nbsp;·&nbsp; <a href="../index.html">Back to all sessions →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/widgets.js?v=1"></script>
+</body>
+</html>

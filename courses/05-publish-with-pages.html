@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 5 · Publish with GitHub Pages - learn github with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-github-with-phoebe</a> / Session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn GitHub with Phoebe · Session 5 of 6 · Non-tech track</div>
+    <h1>Publish with GitHub Pages: <span class="accent">your handbook goes live on the internet</span></h1>
+    <p class="sub">The payoff session. Four sessions of repo, markdown, issues and pull requests turn into a real website today - free, at a real URL you can send to anyone. Settings → Pages → Save is genuinely most of it. And because every merge republishes, the PR flow you learned in Session 4 quietly becomes a publishing pipeline.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Stretch</span>
+      <span class="chip audience">Non-tech professionals</span>
+      <span class="chip audience">Browser only</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Apply-along</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>From repo to real website, without writing a website</h2>
+    </div>
+    <p class="lede">Everything you have built so far - the handbook repo (Session 2), the board (Session 3), the PR flow (Session 4) - was already valuable inside your team. Today it faces the world: GitHub Pages converts your markdown into a website and hosts it for free, forever, at username.github.io/repo-name. This course itself is served exactly that way. The only new skill is knowing which settings page to visit and what "deploy" means when you watch it happen.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Apply-along - in your browser, everyone does it</span>
+      <span class="pill inkpill">Running artifact: your own handbook repo</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      Your handbook live at a real URL you can send to a colleague tonight, a theme applied with a two-line file, and the mental model that every merge republishes - so the review flow from Session 4 is now your publishing pipeline. You leave this session with a website.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHAT PAGES IS ============ -->
+  <section class="section" id="what-pages-is">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · free hosting in every repo</span>
+      <h2>What Pages is <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">GitHub Pages is free website hosting built into every repository. The whole activation: <strong>Settings → Pages → pick a branch → Save.</strong> About a minute later your markdown files are a website at <strong>username.github.io/repo-name</strong>.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline: your repo with markdown files flows into the Pages build, which flows into the live website URL; a loop arrow returns from the live site to the repo labeled every merge republishes">
+        <style>
+          .plT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .plS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .9; }
+          .plX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .plG { font: 700 13px Inter, sans-serif; fill: #2DA44E; }
+          .plP { font: 700 13px Inter, sans-serif; fill: #8250DF; }
+          .plL { stroke: #AFB8C1; stroke-width: 3; fill: none; }
+        </style>
+        <defs>
+          <marker id="plArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#AFB8C1"/>
+          </marker>
+        </defs>
+        <rect x="60" y="70" width="210" height="80" rx="14" fill="#1B1F23"/>
+        <text class="plT" x="80" y="102">Your repo</text>
+        <text class="plS" x="80" y="122">README.md + pages,</text>
+        <text class="plS" x="80" y="138">plain markdown</text>
+        <line class="plL" x1="270" y1="110" x2="330" y2="110" marker-end="url(#plArr)"/>
+        <rect x="335" y="70" width="210" height="80" rx="14" fill="#2DA44E"/>
+        <text class="plT" x="355" y="102">Pages build</text>
+        <text class="plS" x="355" y="122">converts + publishes,</text>
+        <text class="plS" x="355" y="138">~60 s, green check ✓</text>
+        <line class="plL" x1="545" y1="110" x2="605" y2="110" marker-end="url(#plArr)"/>
+        <rect x="610" y="70" width="210" height="80" rx="14" fill="#8250DF"/>
+        <text class="plT" x="630" y="102">Live website</text>
+        <text class="plS" x="630" y="122">username.github.io/</text>
+        <text class="plS" x="630" y="138">team-handbook</text>
+        <path class="plL" d="M 715 150 L 715 205 L 165 205 L 165 150" marker-end="url(#plArr)"/>
+        <text class="plP" x="330" y="196">every merge republishes</text>
+        <text class="plX" x="330" y="228">your Session 4 PR flow is now a publishing pipeline</text>
+        <text class="plG" x="60" y="262">Deploy = GitHub converts your files and pushes them to the web. You watch it as a green check in the Actions tab.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - markdown in, website out, and the loop that keeps it fresh</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What "deploy" means, in office terms<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Deploy = convert and publish.</strong> When you save the Pages setting (and after every future change), GitHub takes your markdown, turns it into web pages, and pushes them to its servers. It takes about 60 seconds; you can watch the progress in the repo's Actions tab and wait for the green check.</li>
+          <li><strong>It re-deploys on every merge.</strong> Change a file on main - directly or via a PR - and the site updates itself a minute later. Nobody "uploads the new version"; the repo IS the website.</li>
+          <li><strong>The URL is predictable:</strong> username.github.io/repo-name. Your repo's address on github.com and your site's address on github.io are two views of the same thing.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The mental flip</strong>
+          After today, "update the website" stops being a request to a webmaster. It is a pull request - reviewed, merged, live in a minute, with the full Session 4 paper trail.
+        </div>
+      </div>
+    </details>
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Reading the Actions tab without fear<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The Actions tab is where deploys (and other automations - Session 6 territory) show their work. For Pages you only need three readings:</p>
+        <ul>
+          <li><strong>Yellow dot, spinning:</strong> the deploy is running. Sixty-ish seconds; go stretch.</li>
+          <li><strong>Green check:</strong> published. Reload the live site and your change is there.</li>
+          <li><strong>Red X:</strong> the build hit a snag - almost always a typo in _config.yml (a missing space after the colon is the classic). Click into the run, read the last few lines, fix the file, and the next commit retries automatically.</li>
+        </ul>
+        <p>That is the entire literacy level you need. Session 6 turns this tab from "where deploys live" into a superpower you can read on any repo.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: MAKE IT LOOK GOOD ============ -->
+  <section class="section" id="themes">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · zero-code polish</span>
+      <h2>Making it look good with zero code <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Out of the box, Pages renders your markdown plainly. One tiny file changes that: <strong>_config.yml</strong>, two lines, copy-paste provided. It is the ONLY configuration file in this entire course - and it is two lines.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A dark config file card with two lines, title and theme, and an arrow to a mini website mock with a green themed header">
+        <style>
+          .cfT { font: 700 13px Inter, sans-serif; fill: #FFFFFF; }
+          .cfM { font: 600 13px "SF Mono", Menlo, monospace; fill: #FFFFFF; }
+          .cfH { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .cfX { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .cfK { font: 700 13px Inter, sans-serif; fill: #1F2328; }
+          .cfL { stroke: #AFB8C1; stroke-width: 3; fill: none; }
+        </style>
+        <defs>
+          <marker id="cfArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#AFB8C1"/>
+          </marker>
+        </defs>
+        <rect x="70" y="45" width="300" height="120" rx="14" fill="#1B1F23"/>
+        <text class="cfT" x="92" y="75">_config.yml</text>
+        <text class="cfM" x="92" y="105">title: Team Handbook</text>
+        <text class="cfM" x="92" y="130">theme: jekyll-theme-cayman</text>
+        <text class="cfX" x="70" y="192">one new file, two lines - that is the</text>
+        <text class="cfX" x="70" y="210">entire configuration of this course</text>
+        <line class="cfL" x1="375" y1="105" x2="465" y2="105" marker-end="url(#cfArr)"/>
+        <rect x="470" y="35" width="340" height="150" rx="14" fill="#F6F8FA" stroke="#AFB8C1"/>
+        <rect x="470" y="35" width="340" height="48" rx="14" fill="#2DA44E"/>
+        <rect x="470" y="60" width="340" height="23" fill="#2DA44E"/>
+        <text class="cfH" x="495" y="65">Team Handbook</text>
+        <rect x="495" y="100" width="240" height="10" rx="5" fill="#AFB8C1"/>
+        <rect x="495" y="120" width="290" height="10" rx="5" fill="#AFB8C1"/>
+        <rect x="495" y="140" width="200" height="10" rx="5" fill="#AFB8C1"/>
+        <text class="cfK" x="470" y="212">same markdown, now wearing a theme</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the only config file in this course: two lines, whole new outfit</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Homepage, links and images - the rules you already know<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Your README (or an index.md) becomes the homepage.</strong> The front door you wrote in Session 2 is now literally the front page of a website. Same file, bigger audience.</li>
+          <li><strong>Relative links just work.</strong> A markdown link to onboarding.md becomes a working link between pages on the live site. Link every page from the homepage and visitors can reach everything.</li>
+          <li><strong>Images drag-dropped into the editor</strong> (Session 2's trick) appear on the site too. No upload manager, no media library - the repo is the media library.</li>
+          <li><strong>Themes are swappable:</strong> change the theme line, merge, reload. Try cayman, minimal or slate before you settle.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>You are looking at one right now.</strong> This course, and every learn-X-with-phoebe site, is a markdown repo served by GitHub Pages - same Settings page, same flow you will use in ten minutes. And beyond this room: thousands of documentation sites, team handbooks and personal portfolios you have visited are secretly Pages sites. It is one of the most-used publishing systems on the internet, hiding in a Settings tab.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: RIGHT TOOL ============ -->
+  <section class="section" id="right-tool">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · when to reach for it</span>
+      <h2>When Pages is the right tool <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Pages serves documents beautifully and does nothing else. Knowing the boundary keeps you out of trouble - and makes you sound very sharp in meetings.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Perfect for, wrong for, and the privacy check<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Perfect for</th><th>Wrong tool for</th></tr></thead>
+          <tbody>
+            <tr><td>Team handbooks and internal docs made public-safe</td><td>Web apps with buttons that DO things</td></tr>
+            <tr><td>Portfolios and personal landing pages</td><td>Anything with logins or user accounts</td></tr>
+            <tr><td>Course sites (hello!) and documentation</td><td>Databases, forms that save data, shops</td></tr>
+            <tr><td>Project one-pagers and event pages</td><td>Sites that must be private on the free plan</td></tr>
+          </tbody>
+        </table>
+        <p>The pattern: Pages serves <strong>pages</strong> - words, images, links. The moment your idea needs to remember visitors or process input, that is real web hosting (and a chat with an engineer).</p>
+        <div class="callout tip">
+          <strong>The one non-negotiable: the privacy check</strong>
+          On the free plan, a Pages site is <strong>public even if the repo is private</strong>. Before you flip the switch, sweep your files for names, numbers, screenshots and anything internal. Apply-along 3's checklist makes this a habit.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Custom domains + github.io URL anatomy<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Custom domains exist:</strong> handbook.yourcompany.com can point at your Pages site - Settings → Pages → Custom domain, plus one record set by whoever manages your company's domain. The official docs walk through it (docs.github.com → Pages → custom domains).</li>
+          <li><strong>URL anatomy:</strong> username.github.io/repo-name is a <strong>project site</strong> - every repo can have one. The special repo named exactly <strong>username.github.io</strong> becomes your <strong>profile site</strong>, served at the bare username.github.io. One per account; a natural home for a portfolio.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 1 of 3</span>
+      <h2>Ship it <span class="tag demo">★ 10 min · everyone goes live</span></h2>
+    </div>
+    <p class="lede">The moment four sessions built toward. When your URL loads, post it in the room chat - we applaud every single one.</p>
+    <div class="steps">
+      <div class="step"><p>Open your handbook repo → <strong>Settings → Pages</strong>. Under Build and deployment, set Source to <strong>Deploy from a branch</strong>, pick <strong>main</strong>, folder <strong>/ (root)</strong>, and press <strong>Save</strong>.</p></div>
+      <div class="step"><p>Go to the <strong>Actions</strong> tab and watch the deploy run - about 60 seconds until the green check. That was a deploy; you just watched one happen.</p></div>
+      <div class="step"><p>Open <strong>username.github.io/team-handbook</strong> (the link also appears at the top of the Pages settings). Your handbook is on the internet. Post the URL in the room chat - applause moment.</p></div>
+      <div class="step"><p>Now fix one thing you immediately hate (there is always one) - but do it the Session 4 way: pencil edit → branch → PR → merge.</p></div>
+      <div class="step"><p>Watch Actions redeploy, reload the live site, see your fix. You just used a pull request as a publishing pipeline. That is the whole loop.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 2 of 3</span>
+      <h2>Theme it <span class="tag demo">★ 6 min · everyone styles</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>In your repo: <strong>Add file → Create new file</strong>. Name it exactly <strong>_config.yml</strong> (the underscore matters).</p></div>
+      <div class="step"><p>Paste the two lines:<br><strong>title: Team Handbook</strong><br><strong>theme: jekyll-theme-cayman</strong></p></div>
+      <div class="step"><p>Commit it straight to main this once (it is your repo's outfit, not its content). Wait for the green check in Actions, then reload the live site: header, colors, typography - a whole design, from two lines.</p></div>
+      <div class="step"><p>Not your style? Try <strong>jekyll-theme-minimal</strong> or <strong>jekyll-theme-slate</strong> - and make THIS change via a branch + PR, watching the site republish when you merge. Feel the publishing pipeline under your fingers.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Two lines is the whole config</strong>
+      Jekyll (the engine behind Pages themes) can do far more - layouts, navigation, plugins. All of it is tech-track territory. Your two lines are deliberately the entire depth of this course, and they are enough for a genuinely good-looking handbook.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 3 of 3</span>
+      <h2>The go-live checklist <span class="tag demo">★ 6 min · everyone audits</span></h2>
+    </div>
+    <p class="lede">Before you share that URL beyond this room, audit your own repo honestly. This checklist is reusable for every site you ever ship.</p>
+    <div class="widget" data-widget="checklist" data-config='{
+  "title": "★ Go-live checklist - is YOUR repo ready to publish?",
+  "intro": "Tick what is true right now. Be honest - the internet is watching.",
+  "items": [
+    {"t": "README works as a homepage: what this is, who it is for, how to navigate", "pts": 2},
+    {"t": "No private information anywhere in the files (names, numbers, screenshots)", "pts": 3, "why": "Pages sites on the free plan are public - this is the one non-negotiable"},
+    {"t": "File names are clean and lowercase (onboarding.md, not Final Draft (2).md)", "pts": 1},
+    {"t": "Every page is reachable by a link from the homepage", "pts": 2},
+    {"t": "You know which branch publishes (main) and that every merge redeploys", "pts": 2}
+  ],
+  "verdicts": [
+    {"min": 100, "label": "Ship it - Settings, Pages, Save", "tone": "good", "note": "All green. Publish and share the URL."},
+    {"min": 60, "label": "Almost - close the gaps first", "tone": "mid", "note": "The unticked rows are your pre-launch punch list. The privacy row is worth triple for a reason."},
+    {"min": 0, "label": "Not yet", "tone": "bad", "note": "Work the list top to bottom - most rows are 10-minute fixes."}
+  ]}'></div>
+    <div class="callout tip">
+      <strong>The debrief</strong>
+      The privacy row is worth 3 points because it is the only mistake on this list you cannot fully take back - the other rows are polish, that one is protection. Run this checklist before every site you ever ship, not just today's.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Polish the live site:</strong> at least 3 pages (homepage plus two more), every page linked from the homepage, theme you actually like. Small PRs, watch each one republish.</li>
+      <li><strong>Share the URL with one real colleague</strong> and ask them to file an issue with feedback (they learned how in your Session 3 world; if not, teach them in two minutes - it is a form).</li>
+      <li><strong>Watch the system work as one thing:</strong> their issue lands on your Session 3 board, you fix it with a Session 4 PR that says "closes #N", the merge closes the issue AND republishes the Session 5 site. Three sessions, one machine.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Your Pages site is live. What makes it update?</p>
+      <button class="qopt" type="button">A · You re-save the Pages setting each time you want the site refreshed</button>
+      <button class="qopt" type="button">B · Any merge (or direct commit) to the publishing branch triggers a redeploy automatically</button>
+      <button class="qopt" type="button">C · GitHub refreshes all Pages sites once a week</button>
+      <p class="qwhy">The setting is one-time; after that, every change to main republishes in about a minute. Your PR flow IS the publishing pipeline.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · On the free plan, who can see your Pages site?</p>
+      <button class="qopt" type="button">A · Only people you invite to the repo</button>
+      <button class="qopt" type="button">B · Only people with the exact URL</button>
+      <button class="qopt" type="button">C · Everyone - Pages sites are public, so sweep for private info before shipping</button>
+      <p class="qwhy">Public even if the repo is private. That is why the privacy row on the go-live checklist is worth triple points.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Which of these is Pages the WRONG tool for?</p>
+      <button class="qopt" type="button">A · A customer portal where clients log in and submit support tickets to a database</button>
+      <button class="qopt" type="button">B · A team handbook with linked pages and images</button>
+      <button class="qopt" type="button">C · A personal portfolio with your bio and project write-ups</button>
+      <p class="qwhy">Logins, forms that save data, databases = a real web application, which needs real hosting. Pages serves pages: words, images, links - and it serves them brilliantly.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official GitHub Skills coverage</h2>
+    </div>
+    <p class="lede">This course maps to GitHub's own free Skills exercises - each session tells you honestly what is covered here and what the official course adds.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub Pages (skills/github-pages)</span><span class="note">the Settings → Pages path, deploy watching, _config.yml theme - Parts 1-2 + Apply-alongs 1-2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Jekyll / configuration depth</span><span class="note">one file, two lines here - layouts, navigation and plugins are tech track</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Custom domains</span><span class="note">pointer only in the self-study card - the docs walk the full setup</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Turn it on</b><span>Settings → Pages → Deploy from a branch → main → Save. Live in ~60 seconds at username.github.io/repo-name.</span></div>
+      <div class="cheat-item"><b>Deploy</b><span>GitHub converts your markdown and publishes it. Watch the green check in the Actions tab.</span></div>
+      <div class="cheat-item"><b>The loop</b><span>Every merge to the publishing branch redeploys. PRs are your publishing pipeline now.</span></div>
+      <div class="cheat-item"><b>_config.yml</b><span>Two lines: title + theme (try cayman, minimal, slate). The only config file in this course.</span></div>
+      <div class="cheat-item"><b>Right tool</b><span>Handbooks, docs, portfolios, course sites = yes. Logins, databases, apps = real web hosting.</span></div>
+      <div class="cheat-item"><b>Privacy check</b><span>Free-plan Pages sites are PUBLIC, even from private repos. Sweep for names, numbers, screenshots first.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 5 of 6 · learn-github-with-phoebe · by Phoebe Fu</span>
+    <span><a href="04-branches-and-prs.html">← Prev: Branches + PRs without code</a> &nbsp;·&nbsp; <a href="06-speak-fluent-github.html">Next: Speak fluent GitHub →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/widgets.js?v=1"></script>
+</body>
+</html>

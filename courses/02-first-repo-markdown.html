@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 2 · Your first repo + Markdown - learn github with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-github-with-phoebe</a> / Session 2 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn GitHub with Phoebe · Session 2 of 6 · Non-tech track</div>
+    <h1>Your first repo + Markdown: <span class="accent">the folder that grew up</span></h1>
+    <p class="sub">Today you stop touring and start building. You will create a real repository in the browser, write its README front door, and learn the 95% of Markdown that covers a lifetime of team documents. By the end of the hour your handbook repo exists, on the internet, with your name on every save.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Foundation</span>
+      <span class="chip audience">Non-tech professionals</span>
+      <span class="chip audience">Browser only</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Apply-along</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>From tourist to homeowner</h2>
+    </div>
+    <p class="lede">Session 1 gave you the map and a profile README made with someone else's recipe. Today you learn the recipe itself: how to create a repository like someone who has done it fifty times, why the README is the highest-leverage page you will ever write, and the small Markdown dialect that powers millions of handbooks, wikis and docs. This is the session where your running artifact - the team handbook repo - is born.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Apply-along - in your browser, everyone does it</span>
+      <span class="pill inkpill">Running artifact: your own handbook repo</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A real team-handbook repository you created yourself, a README front door that answers the four questions every visitor has, working fluency in the Markdown that covers 95% of daily writing, and an upgraded profile README that proves it - all committed with messages future-you will thank you for.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: CREATE A REPO ============ -->
+  <section class="section" id="create-repo">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the birth of a repo</span>
+      <h2>Create a repo like a pro <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">One form, five decisions, thirty seconds. The + button in the top-right corner of any GitHub page is where every repository begins. A repo is three things at once: a <strong>folder</strong> (the files), a <strong>memory</strong> (every version, forever), and a <strong>front door</strong> (the README). The form decides how all three start.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of the new-repository form: name field, description, visibility choice, README checkbox, each with an annotation">
+        <style>
+          .rfT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .rfS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .9; }
+          .rfK { font: 700 13px Inter, sans-serif; fill: #1F2328; }
+          .rfN { font: 400 11.5px Inter, sans-serif; fill: #656D76; }
+          .rfA { font: 700 12.5px Inter, sans-serif; fill: #1F2328; }
+          .rfL { stroke: #AFB8C1; stroke-width: 2; fill: none; }
+        </style>
+        <rect x="60" y="26" width="430" height="48" rx="10" fill="#1B1F23"/>
+        <text class="rfT" x="76" y="46">team-handbook</text>
+        <text class="rfS" x="76" y="64">Repository name · lowercase-with-hyphens</text>
+        <rect x="60" y="90" width="430" height="48" rx="10" fill="#2DA44E"/>
+        <text class="rfT" x="76" y="110">Description</text>
+        <text class="rfS" x="76" y="128">one line: what this is and who it is for</text>
+        <rect x="60" y="154" width="430" height="60" rx="10" fill="#F6F8FA"/>
+        <circle cx="86" cy="176" r="7" fill="none" stroke="#2DA44E" stroke-width="3"/>
+        <text class="rfK" x="104" y="181">Public · anyone can read</text>
+        <circle cx="86" cy="200" r="7" fill="none" stroke="#AFB8C1" stroke-width="3"/>
+        <text class="rfN" x="104" y="205">Private · invited people only</text>
+        <rect x="60" y="230" width="430" height="48" rx="10" fill="#DAFBE1"/>
+        <text class="rfK" x="76" y="250">☑ Add a README file</text>
+        <text class="rfN" x="76" y="268">always tick this - your front door, pre-built</text>
+        <line class="rfL" x1="490" y1="50" x2="560" y2="50"/>
+        <text class="rfA" x="570" y="46">The address you will share forever:</text>
+        <text class="rfN" x="570" y="62">github.com/you/team-handbook</text>
+        <line class="rfL" x1="490" y1="114" x2="560" y2="114"/>
+        <text class="rfA" x="570" y="110">Shows in search + repo lists.</text>
+        <text class="rfN" x="570" y="126">Skip it and your repo looks abandoned.</text>
+        <line class="rfL" x1="490" y1="184" x2="560" y2="184"/>
+        <text class="rfA" x="570" y="180">The one decision that matters.</text>
+        <text class="rfN" x="570" y="196">Decision guide below - when unsure, private.</text>
+        <line class="rfL" x1="490" y1="254" x2="560" y2="254"/>
+        <text class="rfA" x="570" y="250">Unchecked = an empty, confusing repo.</text>
+        <text class="rfN" x="570" y="266">Checked = a page you can edit in minute one.</text>
+        <text class="rfN" x="60" y="312">Repo = folder + memory + front door. This form sets up all three in one green click.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the new-repo form, decoded field by field</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The five fields, and what pros do with them<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Name:</strong> lowercase-with-hyphens, meaningful, no dates or versions ("team-handbook", not "TeamHandbook_v2_2026"). It becomes part of a URL, so treat it like one.</li>
+          <li><strong>Description:</strong> one honest line. It appears in search results and on your profile - "Everything new joiners need, in one place" beats a blank.</li>
+          <li><strong>Public vs private:</strong> public means the whole internet can read (only invited people can change); private means invisible except to invitees. Handbooks and portfolios go public; anything with names, numbers or client details goes private.</li>
+          <li><strong>Add a README:</strong> ALWAYS tick it. Without it your new repo greets you with setup instructions written for developers; with it you land on an editable front page.</li>
+          <li><strong>Everything else:</strong> ignore. .gitignore and license pickers are tech-track business.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The non-tech move</strong>
+          Naming is a kindness to your future teammates. A repo named clearly enough to be guessed ("brand-assets", "meeting-notes", "team-handbook") is a repo people actually find.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Public or private? The decision guide<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>You are making...</th><th>Choose</th><th>Because</th></tr></thead>
+          <tbody>
+            <tr><td>Team handbook, style guide, templates</td><td><strong>Public</strong></td><td>nothing sensitive + findability is the point</td></tr>
+            <tr><td>Your portfolio, course notes, profile README</td><td><strong>Public</strong></td><td>it is your shop window - let people in</td></tr>
+            <tr><td>Meeting notes, plans with names or numbers</td><td><strong>Private</strong></td><td>people and money stay behind the door</td></tr>
+            <tr><td>Client work, anything under NDA</td><td><strong>Private</strong></td><td>contractual, not optional</td></tr>
+            <tr><td>Not sure yet</td><td><strong>Private</strong></td><td>you can flip to public later in Settings; un-publishing is messier</td></tr>
+          </tbody>
+        </table>
+        <p>One rule with no exceptions: passwords, keys and secrets never go in ANY repo, public or private. Session 6 covers safety properly.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: README ============ -->
+  <section class="section" id="readme">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the highest-leverage page</span>
+      <h2>README: the front door <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">The README is the page every visitor sees first, rendered right under your file list. Great ones all answer the same four questions in the first screen: <strong>what is this</strong> (one line), <strong>who is it for</strong>, <strong>how do I use or navigate it</strong>, and <strong>who owns it</strong>. Everything else is bonus.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The four questions + the pencil that answers them<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Editing happens entirely in the browser: open README.md, click the pencil ✏️, type, flip to the <strong>Preview</strong> tab to see it rendered, then press <strong>Commit changes</strong> and write a short message describing what you did. That message is not bureaucracy - it is a note to future-you.</p>
+        <ul>
+          <li><strong>What:</strong> "The single source of truth for how our team works." One line, top of the page.</li>
+          <li><strong>Who:</strong> "For new joiners first, everyone second."</li>
+          <li><strong>How:</strong> a short list of links to the pages inside (your table of contents).</li>
+          <li><strong>Owner:</strong> a name. Unowned documents rot.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The awesome-lists phenomenon:</strong> some of the most-starred repositories on all of GitHub - "awesome" and "free-programming-books", each with 300k+ stars - contain no software whatsoever. They are ONLY a README: a beautifully organized list of links, maintained by thousands of people through proposals and reviews. Proof that a text-only repo can out-star almost every app on earth - and that the skills in this session are the whole game.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Commit messages: notes to future you<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Six months from now, someone (probably you) will scroll the history asking "when did this change, and why?" The message is the only thing standing between them and archaeology.</p>
+        <table class="clean">
+          <thead><tr><th>Weak message</th><th>Strong message</th></tr></thead>
+          <tbody>
+            <tr><td>update</td><td>clarify expense policy for travel under $50</td></tr>
+            <tr><td>changes</td><td>add onboarding checklist for week one</td></tr>
+            <tr><td>fix</td><td>correct the HR contact email</td></tr>
+          </tbody>
+        </table>
+        <p>The recipe: start with a verb, say what changed and (if not obvious) why. Ten words is plenty. "clarify expense policy" beats "update" every single time someone searches the history.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: MARKDOWN ============ -->
+  <section class="section" id="markdown">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the writing system</span>
+      <h2>Markdown in 15 minutes flat <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">Markdown is plain text with a few punctuation marks that mean formatting. No toolbar, no fonts menu - which is exactly why it never breaks, diffs beautifully, and became the writing system of GitHub, Notion, Slack and half the internet. Here is the 95% dialect; you will be fluent before the apply-along.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One handbook page shown twice: raw markdown source on the left, the rendered result on the right, with arrows pairing each line">
+        <style>
+          .anC { font: 600 13px "SF Mono", Menlo, monospace; fill: #FFFFFF; }
+          .anH { font: 800 18px Inter, sans-serif; fill: #1F2328; }
+          .anB { font: 700 14px Inter, sans-serif; fill: #1F2328; }
+          .anR { font: 400 14px Inter, sans-serif; fill: #1F2328; }
+          .anU { font: 700 14px Inter, sans-serif; fill: #0969DA; text-decoration: underline; }
+          .anN { font: 400 12.5px Inter, sans-serif; fill: #656D76; }
+          .anP { font: 700 13px Inter, sans-serif; fill: #1F883D; }
+          .anW { stroke: #AFB8C1; stroke-width: 2; fill: none; marker-end: url(#anArw); }
+        </style>
+        <defs>
+          <marker id="anArw" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="#AFB8C1"/>
+          </marker>
+        </defs>
+        <text class="anP" x="60" y="22">What you type</text>
+        <text class="anP" x="490" y="22">What everyone sees</text>
+        <rect x="60" y="32" width="330" height="228" rx="12" fill="#1B1F23"/>
+        <text class="anC" x="80" y="66"># Team handbook</text>
+        <text class="anC" x="80" y="106">**Start here** if you are new.</text>
+        <text class="anC" x="80" y="146">## Onboarding</text>
+        <text class="anC" x="80" y="186">- [ ] Meet the team</text>
+        <text class="anC" x="80" y="226">[Ask Sam](link) anytime.</text>
+        <rect x="490" y="32" width="330" height="228" rx="12" fill="#F6F8FA"/>
+        <text class="anH" x="510" y="68">Team handbook</text>
+        <text class="anR" x="510" y="106"><tspan class="anB">Start here</tspan> if you are new.</text>
+        <text class="anB" x="510" y="146" style="font-size:16px">Onboarding</text>
+        <rect x="510" y="172" width="15" height="15" rx="3" fill="none" stroke="#1F2328" stroke-width="2"/>
+        <text class="anR" x="534" y="185">Meet the team</text>
+        <text class="anU" x="510" y="226">Ask Sam</text>
+        <text class="anR" x="586" y="226">anytime.</text>
+        <line class="anW" x1="396" y1="61" x2="482" y2="61"/>
+        <line class="anW" x1="396" y1="101" x2="482" y2="101"/>
+        <line class="anW" x1="396" y1="141" x2="482" y2="141"/>
+        <line class="anW" x1="396" y1="181" x2="482" y2="181"/>
+        <line class="anW" x1="396" y1="221" x2="482" y2="221"/>
+        <text class="anN" x="60" y="288">Same file, two views. The Preview tab in the web editor flips between them - and - [ ] renders as a real, clickable checkbox.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one handbook page, annotated: source left, rendered right</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The 95% dialect, one table<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>You type</th><th>You get</th></tr></thead>
+          <tbody>
+            <tr><td><code># Title</code> · <code>## Section</code> · <code>### Sub</code></td><td>headings, three sizes - your document skeleton</td></tr>
+            <tr><td><code>**bold**</code> · <code>*italic*</code></td><td><strong>bold</strong> and <em>italic</em></td></tr>
+            <tr><td><code>- item</code> (indent two spaces to nest)</td><td>bullet lists, nested as deep as you like</td></tr>
+            <tr><td><code>[Ask Sam](https://...)</code></td><td>a clickable link</td></tr>
+            <tr><td>drag an image into the editor</td><td>GitHub uploads it and writes the image code for you</td></tr>
+            <tr><td><code>`Settings`</code> (backticks)</td><td>inline code style - perfect for filenames and button names</td></tr>
+            <tr><td><code>&gt; quoted line</code></td><td>an indented quote block</td></tr>
+            <tr><td><code>| Day | Focus |</code> rows with pipes</td><td>a real table (header row, then <code>|---|---|</code>, then rows)</td></tr>
+            <tr><td><code>- [ ] task</code> · <code>- [x] done</code></td><td>real rendered checkboxes - free todo docs for non-tech teams</td></tr>
+            <tr><td><code>:sparkles:</code></td><td>emoji ✨ - hundreds of codes work</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>The two-minute rule</strong>
+          If you remember only headings, bold, lists and links, you can already write 80% of any handbook page. Everything else is garnish you can look up.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>GitHub-flavored extras: the social markdown<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>On GitHub, Markdown grows superpowers that plain text editors do not have. You will meet all of these properly in Sessions 3 and 4:</p>
+        <ul>
+          <li><strong>Task lists in issues:</strong> <code>- [ ]</code> inside an issue shows a live progress bar on the issue list. Project management for free.</li>
+          <li><strong>@mentions:</strong> type <code>@username</code> and that person gets notified - Markdown that taps shoulders.</li>
+          <li><strong>#issue-links:</strong> type <code>#12</code> and GitHub auto-links to issue 12. Cross-referencing without URLs.</li>
+          <li><strong>Collapsible details:</strong> wrap long content so readers expand only what they need (this very card is the same pattern).</li>
+        </ul>
+        <p>Optional deep end: the official Skills course <em>Communicate using Markdown</em> (github.com/skills/communicate-using-markdown) - 30 min, hands-on, same dialect.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 1 of 3</span>
+      <h2>Create the handbook repo <span class="tag demo">★ 6 min · everyone creates</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Top-right + button → <strong>New repository</strong>. Name it <strong>team-handbook</strong> (or your real team's name, lowercase-with-hyphens). Description: one honest line about what it is.</p></div>
+      <div class="step"><p>Choose <strong>Public</strong> (it is a practice handbook - nothing sensitive goes in), tick <strong>Add a README file</strong>, click the green <strong>Create repository</strong> button. Your running artifact for the rest of this course now exists.</p></div>
+      <div class="step"><p>Click the pencil ✏️ on the README and write the four-line front door: what this is (1 line), who it is for, how to navigate (a placeholder list is fine for now), and who owns it (you).</p></div>
+      <div class="step"><p>Press <strong>Commit changes</strong> with a real message - "write the handbook front door" - not "update". Future-you says thanks.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 2 of 3</span>
+      <h2>The Markdown playground <span class="tag demo">★ 10 min · everyone plays</span></h2>
+    </div>
+    <p class="lede">Type on the left, watch it render on the right - the fastest way Markdown has ever been learned. Recreate your handbook's front page here, then ship it for real.</p>
+    <div class="widget" data-widget="mdpreview" data-config='{"title": "★ Markdown playground - type left, watch it render right"}'></div>
+    <div class="steps">
+      <div class="step"><p>Build your front page in the playground: one <code># title</code>, one intro paragraph with <code>**bold**</code>, one <code>## section</code>, and a 3-item list where one item is a <code>[link](url)</code>.</p></div>
+      <div class="step"><p>Add one table with 2 columns: <code>| Day | Focus |</code>, the <code>|---|---|</code> divider row, then two or three rows. Watch it snap into a real table on the right.</p></div>
+      <div class="step"><p>Happy with it? Copy your playground text, open your real README with the pencil ✏️, paste it in, check the <strong>Preview</strong> tab, and commit with a message like "add navigation and weekly focus table".</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>The debrief</strong>
+      Notice what you did NOT need: a toolbar, a font menu, a save dialog. Text in, formatted page out, history kept. That is the whole trick.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Apply-along 3 of 3</span>
+      <h2>Upgrade your profile README <span class="tag demo">★ 6 min · everyone upgrades</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Open the username repo you made in Session 1 (github.com/you/you) and click the pencil ✏️ on its README - two honest lines are about to become a page.</p></div>
+      <div class="step"><p>Give it today's treatment: a <code>#</code> heading with your name, a short intro paragraph, and a "What I am working on" list with 2-3 items.</p></div>
+      <div class="step"><p>Add one flourish: a small table (projects and their status) or a <code>&gt;</code> quote you live by. One is plenty - profiles reward restraint.</p></div>
+      <div class="step"><p>Commit ("give the profile a proper front page"), then visit your profile and admire. This page is live on the internet and you wrote it in a markup language. Today.</p></div>
+    </div>
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p>Recruiters and collaborators really do land on these pages. A profile README with a clear heading, one honest paragraph and a current-work list signals "this person ships and communicates" better than most CVs manage in two pages.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 25 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Grow the handbook:</strong> add 2 real pages via <strong>Add file → Create new file</strong>. Name them like URLs: <code>onboarding.md</code>, <code>how-we-meet.md</code>. Use headings, a list and at least one checkbox list.</li>
+      <li><strong>One commit per page,</strong> each with a proper message ("add onboarding checklist", "document meeting rhythm"). Then open the history and enjoy reading your own trail.</li>
+      <li><strong>Read one awesome-list:</strong> search GitHub for "awesome" plus your field (awesome-analytics, awesome-product-management). Notice it is pure README + Markdown - then star it.</li>
+      <li><strong>Optional deep end:</strong> the Skills course <em>Communicate using Markdown</em> (github.com/skills/communicate-using-markdown).</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Your team handbook has no names, numbers or client details, and you want new joiners (and candidates!) to find it. Public or private?</p>
+      <button class="qopt" type="button">A · Private - safer is always better</button>
+      <button class="qopt" type="button">B · Public, but only on a paid plan</button>
+      <button class="qopt" type="button">C · Public - nothing sensitive is in it and findability is the whole point</button>
+      <p class="qwhy">Public when nothing is sensitive AND being found is a feature; private when people, money or clients appear. When unsure, start private - you can flip it later in Settings.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Why do commit messages like "clarify expense policy" beat "update"?</p>
+      <button class="qopt" type="button">A · Future-you can scan the history and know why every change happened, without opening a single version</button>
+      <button class="qopt" type="button">B · GitHub rejects messages under ten words</button>
+      <button class="qopt" type="button">C · They do not - nobody ever reads them</button>
+      <p class="qwhy">The history is only as useful as its notes. Six months from now, "update" x 40 is archaeology; verb-first messages are a searchable story of the document.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · Which Markdown gives you a real, rendered checkbox?</p>
+      <button class="qopt" type="button">A · [x] done, on its own</button>
+      <button class="qopt" type="button">B · - [ ] task - a list item with square brackets</button>
+      <button class="qopt" type="button">C · Pasting a ☐ character from a symbols menu</button>
+      <p class="qwhy">The dash makes it a list item, the brackets make it a checkbox: - [ ] open, - [x] checked. Inside issues these even show progress bars - Session 3 uses that.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official GitHub Skills coverage</h2>
+    </div>
+    <p class="lede">This course maps to GitHub's own free Skills exercises - each session tells you honestly what is covered here and what the official course adds.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Communicate using Markdown (skills/communicate-using-markdown)</span><span class="note">the full working dialect: headings, emphasis, lists, links, code, quotes, tables, task lists - Part 3 + Apply-alongs 2 and 3</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Introduction to GitHub (skills/introduction-to-github)</span><span class="note">repo creation and web-UI commits - Parts 1-2 + Apply-along 1</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Images and drag-drop uploads</span><span class="note">shown in the dialect table; practice on your own pages this week</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">GitHub-flavored social markdown</span><span class="note">@mentions, #issue-links, task-list progress bars - self-study card; comes alive in Sessions 3-4</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>New repo recipe</b><span>+ → New repository · lowercase-with-hyphens name · one-line description · ALWAYS tick Add a README.</span></div>
+      <div class="cheat-item"><b>Public vs private</b><span>Public = world reads, invited edit. Private = invited only. Names, numbers, clients → private. Unsure → private.</span></div>
+      <div class="cheat-item"><b>Web editor loop</b><span>Pencil ✏️ → type → Preview tab → Commit changes with a real message.</span></div>
+      <div class="cheat-item"><b>Commit message</b><span>A note to future-you. Verb first: "clarify expense policy" beats "update", every time.</span></div>
+      <div class="cheat-item"><b>Markdown mini-table</b><span># title · ## section · **bold** · - list · [link](url) · `code` · &gt; quote · | tables | with | pipes |</span></div>
+      <div class="cheat-item"><b>Checkbox magic</b><span>- [ ] task renders as a real checkbox; - [x] is checked. Free todo docs - and progress bars inside issues.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 2 of 6 · learn-github-with-phoebe · by Phoebe Fu</span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="01-meet-github.html">← Meet GitHub</a> &nbsp;·&nbsp; <a href="03-issues-and-projects.html">Issues + Projects →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/widgets.js?v=1"></script>
+</body>
+</html>
