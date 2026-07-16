@@ -51,6 +51,17 @@
   .isnot .half p { font-size: .87rem; color: var(--muted); }
   .isnot .is h3 { color: var(--indigo-deep); }
   .isnot .not h3 { color: var(--muted); }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff, #F6FAFD); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
 </style>
 </head>
 <body>
@@ -70,6 +81,12 @@
 </header>
 
 <main class="wrap">
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole course at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
   <section class="section">
     <div class="course-grid">
       <a class="course-card" href="courses/01-meet-github.html" style="--diff:#34D399">
@@ -165,6 +182,45 @@
   </footer>
 </main>
 
+<script>
+window.MINDMAP_DATA = {
+  title: "GitHub",
+  centerColor: "#1B1F23",
+  sessions: [
+    { label: "Meet\nGitHub", href: "courses/01-meet-github.html", color: "#34D399",
+      concepts: [
+        { label: "What GitHub is", href: "courses/01-meet-github.html" },
+        { label: "Accounts & repos", href: "courses/01-meet-github.html" },
+        { label: "Social layer", href: "courses/01-meet-github.html" } ] },
+    { label: "First repo\n& Markdown", href: "courses/02-first-repo-markdown.html", color: "#34D399",
+      concepts: [
+        { label: "Create a repo", href: "courses/02-first-repo-markdown.html" },
+        { label: "The README", href: "courses/02-first-repo-markdown.html" },
+        { label: "Markdown basics", href: "courses/02-first-repo-markdown.html" } ] },
+    { label: "Issues &\nProjects", href: "courses/03-issues-and-projects.html", color: "#FBBF24",
+      concepts: [
+        { label: "Issues as todos", href: "courses/03-issues-and-projects.html" },
+        { label: "Labels & sorting", href: "courses/03-issues-and-projects.html" },
+        { label: "Project boards", href: "courses/03-issues-and-projects.html" } ] },
+    { label: "Branches\n& PRs", href: "courses/04-branches-and-prs.html", color: "#FBBF24",
+      concepts: [
+        { label: "Safe copies", href: "courses/04-branches-and-prs.html" },
+        { label: "Pull requests", href: "courses/04-branches-and-prs.html" },
+        { label: "Review & approve", href: "courses/04-branches-and-prs.html" } ] },
+    { label: "Publish\nwith Pages", href: "courses/05-publish-with-pages.html", color: "#FB923C",
+      concepts: [
+        { label: "Free hosting", href: "courses/05-publish-with-pages.html" },
+        { label: "Themes & polish", href: "courses/05-publish-with-pages.html" },
+        { label: "When to use it", href: "courses/05-publish-with-pages.html" } ] },
+    { label: "Speak fluent\nGitHub", href: "courses/06-speak-fluent-github.html", color: "#FB923C",
+      concepts: [
+        { label: "Bots & actions", href: "courses/06-speak-fluent-github.html" },
+        { label: "Repo health", href: "courses/06-speak-fluent-github.html" },
+        { label: "The phrasebook", href: "courses/06-speak-fluent-github.html" } ] }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
 <script src="assets/app.js?v=1"></script>
 </body>
 </html>
