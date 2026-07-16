@@ -22,6 +22,21 @@
 
   var SVGNS = "http://www.w3.org/2000/svg";
 
+  /* ---- theme: read the site's own palette from CSS custom properties, so the map
+     automatically matches whichever course theme style.css carries. Falls back to
+     MINDMAP_DATA colors / neutral greys when a variable is absent. ---- */
+  var rootCS = getComputedStyle(document.documentElement);
+  function theme(name, fallback) {
+    var v = rootCS.getPropertyValue(name);
+    return (v && v.trim()) || fallback;
+  }
+  var C_ACCENT = theme("--indigo", "#0E7490");        // session fill + trunk
+  var C_DEEP   = theme("--indigo-deep", "#0B2A45");   // root fill
+  var C_SOFT   = theme("--indigo-soft", "#93C5FD");   // concept border
+  var C_TINT   = theme("--indigo-50", "#EEF2FF");     // concept fill
+  var C_INK    = theme("--ink", "#16202B");           // concept text
+  var C_FAINT  = theme("--faint", "#CBD5E1");         // twig edges
+
   /* ---- layout constants (left-to-right tree) ---- */
   var ROW = 46;          // vertical pitch of one concept row
   var GAP = 22;          // vertical gap between session blocks
@@ -104,8 +119,8 @@
     var sy = y + bh / 2;              // session node sits mid-block
     var edges = [];
 
-    // trunk: root -> session (tinted with the session color for a subtle rainbow spine)
-    var trunk = curve(X_ROOT + ROOT_W / 2, rootY, X_SESS - SESS_W / 2, sy, s.color, 2.5);
+    // trunk: root -> session, in the site accent
+    var trunk = curve(X_ROOT + ROOT_W / 2, rootY, X_SESS - SESS_W / 2, sy, C_ACCENT, 2.5);
     trunk.style.opacity = 0.55;
     edgeLayer.appendChild(trunk);
     edges.push(trunk);
@@ -116,13 +131,13 @@
     var cy0 = sy - ((cs.length - 1) * ROW) / 2;
     cs.forEach(function (c, j) {
       var cyj = cy0 + j * ROW;
-      var twig = curve(X_SESS + SESS_W / 2, sy, X_CONC - CONC_W / 2, cyj, "#CDD6DF", 1.5);
+      var twig = curve(X_SESS + SESS_W / 2, sy, X_CONC - CONC_W / 2, cyj, C_FAINT, 1.5);
       edgeLayer.appendChild(twig);
       edges.push(twig);
       var cnode = node({
         x: X_CONC, y: cyj, w: CONC_W, h: CONC_H, rx: 8,
-        fill: "#F4F8FB", color: "#16202B", fs: 12, fw: 600,
-        stroke: s.color, strokeW: 1.5,
+        fill: C_TINT, color: C_INK, fs: 12, fw: 600,
+        stroke: C_SOFT, strokeW: 1.5,
         label: String(c.label).replace(/\n/g, " "), href: c.href
       });
       nodeLayer.appendChild(cnode);
@@ -131,7 +146,7 @@
 
     var snode = node({
       x: X_SESS, y: sy, w: SESS_W, h: SESS_H, rx: 12,
-      fill: s.color, color: "#16202B", fs: 13, fw: 800,
+      fill: C_ACCENT, color: "#FFFFFF", fs: 13, fw: 800,
       label: (i + 1) + " · " + s.label, href: s.href
     });
     nodeLayer.appendChild(snode);
@@ -142,7 +157,7 @@
   // root node last (on top of trunk curves)
   nodeLayer.appendChild(node({
     x: X_ROOT, y: rootY, w: ROOT_W, h: ROOT_H, rx: 16,
-    fill: data.centerColor || "#0B2A45", color: "#FFFFFF", fs: 16, fw: 800,
+    fill: C_DEEP || data.centerColor, color: "#FFFFFF", fs: 16, fw: 800,
     label: data.title
   }));
 
