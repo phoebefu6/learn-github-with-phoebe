@@ -23,11 +23,15 @@
   var n = data.sessions.length;
   // n-adaptive geometry: rings and canvas grow with session count so the same
   // renderer fits courses from 6 to 14+ sessions (keeps session nodes from crowding).
-  var STAGGER = 44;                          // odd twigs pushed out to form a 2nd row
-  var R1 = Math.max(150, Math.round(23 * n)); // session ring
-  var R2 = R1 + 145;                          // concept ring (base)
-  var maxR = R2 + STAGGER;
-  var W = 2 * (maxR + 150), H = 2 * (maxR + 60), cx = W / 2, cy = H / 2;
+  // Each session sprouts its concepts as a RADIAL BRANCH stepping straight outward along
+  // its own spoke (tiny zigzag), so concepts never drift into a neighbouring session's
+  // sector - the failure mode of an angular fan on dense (8+ session) maps.
+  var maxC = data.sessions.reduce(function (m, s) { return Math.max(m, (s.concepts || []).length); }, 0);
+  var STEP = 150;                             // radial gap between chained concepts (must exceed node width so horizontal branches do not self-overlap)
+  var R1 = Math.max(170, Math.round(26 * n)); // session ring
+  var R2 = R1 + 150;                          // first concept ring
+  var maxR = R2 + Math.max(0, maxC - 1) * STEP;
+  var W = 2 * (maxR + 150), H = 2 * (maxR + 70), cx = W / 2, cy = H / 2;
   var angleStep = 360 / n;                    // degrees between sessions
 
   function el(name, attrs, text) {
@@ -92,19 +96,18 @@
     edges.push(spoke);
 
     var cs = s.concepts || [];
-    // spread never exceeds ~60% of the angular sector, so concept fans never cross into
-    // a neighbouring session (matters for dense 9-14 session courses).
-    var base = cs.length > 2 ? 22 : (cs.length > 1 ? 26 : 0);
-    var spread = Math.min(base, angleStep * 0.6);
     var conceptEls = [];
+    var px = sx, py = sy;                         // chain starts at the session node
+    // narrow zigzag keeps the branch lively but inside a tight cone around the spoke
+    var JIT = Math.min(5, angleStep * 0.12);
     cs.forEach(function (c, j) {
-      var off = (j - (cs.length - 1) / 2) * spread;
-      var rBonus = (j % 2 === 1) ? STAGGER : 0; // stagger alternate twigs into a 2nd row
+      var off = (j % 2 === 0 ? -JIT : JIT);
       var ca = (-90 + i * (360 / n) + off) * Math.PI / 180;
-      var ccx = cx + (R2 + rBonus) * Math.cos(ca);
-      var ccy = cy + (R2 + rBonus) * Math.sin(ca);
+      var rr = R2 + j * STEP;
+      var ccx = cx + rr * Math.cos(ca);
+      var ccy = cy + rr * Math.sin(ca);
       var twig = el("line", {
-        x1: sx, y1: sy, x2: ccx, y2: ccy,
+        x1: px, y1: py, x2: ccx, y2: ccy,          // chain from the previous node, not all from the session
         stroke: "#CDD6DF", "stroke-width": 1.5, "class": "mm-edge"
       });
       edgeLayer.appendChild(twig);
@@ -116,6 +119,7 @@
       });
       nodeLayer.appendChild(cnode);
       conceptEls.push(cnode);
+      px = ccx; py = ccy;
     });
 
     var snode = node({
