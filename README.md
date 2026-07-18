@@ -1,3 +1,8 @@
+<!-- learn-with-phoebe hub banner -->
+> ### 📚 Part of [**Learn with Phoebe**](https://phoebefu6.github.io/learn-with-phoebe/)
+> The shelf of 20 free, hands-on courses on AI, data, and the craft around them. **[Browse every course ↗](https://phoebefu6.github.io/learn-with-phoebe/)**
+<!-- /learn-with-phoebe hub banner -->
+
 # learn-github-with-phoebe
 
 GitHub for everyone - no code required. 6 browser-only sessions, zero code, zero command line. You build a real team handbook as the running artifact: created in Session 2, planned in Session 3, collaborated on in Session 4, live on the internet by Session 5, health-checked like a pro in Session 6.
